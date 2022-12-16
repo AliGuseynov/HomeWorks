@@ -4,7 +4,125 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b1df896-7ba8-454e-a403-fbef56062613" name="Changes" comment="" />
+    <list default="true" id="0b1df896-7ba8-454e-a403-fbef56062613" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Homework 2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework 2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework 2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework 2/Homework 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework 2/Homework 2.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework 2/out/production/Homework 2/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework 2/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/Homework1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/Homework1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/out/production/Homework1/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework1/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/Homework3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/Homework3.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/Task3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/out/production/Task3/Book.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/out/production/Task3/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/src/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework3/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/Homework4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/Homework4.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/Task3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Model/Author.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Model/Book.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Model/BookInstance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Model/Branch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Model/Publisher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/out/production/Task3/Model/Store.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Model/Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Model/BookInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Model/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Model/Publisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homework4/src/Model/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/Homeworks.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/libraries/Homework1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/libraries/Homework3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/libraries/Homework4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/libraries/Homework_12_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/libraries/Homework_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/HomeWorks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 12.12" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/Homework 2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/Homework 2.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/out/production/Homework 2/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework 2/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/Homework1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/Homework1.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/out/production/Homework1/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework1/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/Homework3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/Homework3.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/Task3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/out/production/Task3/Book.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/out/production/Task3/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/src/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework3/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/Homework4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/Homework4.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/Task3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Main.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Model/Author.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Model/Book.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Model/BookInstance.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Model/Branch.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Model/Publisher.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/out/production/Task3/Model/Store.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Model/Author.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Model/BookInstance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Model/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Model/Publisher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/Homework4/src/Model/Store.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Homeworks/ShopApp13.12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework 12.12/out/production/Homework 12.12/Classes/ImmutablePerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/Homework 12.12/out/production/Homework 12.12/Classes/ImmutablePerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework 12.12/out/production/Homework 12.12/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Homework 12.12/out/production/Homework 12.12/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework 12.12/src/Classes/ImmutablePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homework 12.12/src/Classes/ImmutablePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homework 12.12/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homework 12.12/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homeworks/Homework 12.12/out/production/Homework 12.12/Classes/ImmutablePerson.class" beforeDir="false" afterPath="$PROJECT_DIR$/Homeworks/Homework 12.12/out/production/Homework 12.12/Classes/ImmutablePerson.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homeworks/Homework 12.12/out/production/Homework 12.12/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/Homeworks/Homework 12.12/out/production/Homework 12.12/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homeworks/Homework 12.12/src/Classes/ImmutablePerson.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homeworks/Homework 12.12/src/Classes/ImmutablePerson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homeworks/Homework 12.12/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homeworks/Homework 12.12/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homeworks/ShopApp13.12/out/production/ShopApp13.12/UI/Ui.class" beforeDir="false" afterPath="$PROJECT_DIR$/Homeworks/ShopApp13.12/out/production/ShopApp13.12/UI/Ui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Homeworks/ShopApp13.12/src/UI/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/Homeworks/ShopApp13.12/src/UI/Ui.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopApp13.12/out/production/ShopApp13.12/UI/Ui.class" beforeDir="false" afterPath="$PROJECT_DIR$/ShopApp13.12/out/production/ShopApp13.12/UI/Ui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShopApp13.12/src/UI/Ui.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShopApp13.12/src/UI/Ui.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +137,16 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2IzLtmI7OYMxaAFSq7Ur2WNe1Ce" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -37,6 +159,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -48,11 +171,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1671179681424</updated>
-      <workItem from="1671179682593" duration="1581000" />
+      <workItem from="1671179682593" duration="1915000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
