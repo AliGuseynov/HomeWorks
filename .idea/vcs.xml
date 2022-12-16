@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homework" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homework 12.12" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homeworks" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homeworks/HomeWorks" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homeworks/Homework" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homeworks/Homework 12.12" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/Homeworks/ShopApp13.12" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/ShopApp13.12" vcs="Git" />
+    <mapping directory="" vcs="Git" />
   </component>
 </project>
