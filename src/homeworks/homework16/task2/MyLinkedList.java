@@ -1,10 +1,10 @@
 package homeworks.homework16.task2;
 
-public class MyLinkedList {
+public class MyLinkedList<T> {
 
     Node head;
 
-    public void add(int item) {
+    public void add(T item) {
         Node node = new Node();
         node.item = item;
         node.next = null;
@@ -22,7 +22,7 @@ public class MyLinkedList {
 
     }
 
-    public void get(int index, int data) {
+    public void get(int index, T data) {
         Node node = new Node();
         node.item = data;
         node.next = null;
