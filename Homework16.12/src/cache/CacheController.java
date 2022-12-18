@@ -35,6 +35,7 @@ public class CacheController<T>{
         CacheData cacheItem =cacheData[index];
 
         if (cacheItem != null){
+            cacheItem.setUsedTime(LocalDateTime.now());
             return (T)cacheItem.getItem();
         } else {return (T)minusOne;}
     }
