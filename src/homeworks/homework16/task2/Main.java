@@ -1,4 +1,4 @@
-package homeworks.homework16.task22;
+package homeworks.homework16.task2;
 
 
 public class Main {
