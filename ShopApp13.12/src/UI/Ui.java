@@ -3,14 +3,9 @@ package UI;
 import Models.Item;
 import Models.ItemCategorie;
 import Models.Receipt;
-import Repositories.ItemRepo;
-import Repositories.ReceiptRepo;
-import Repositories.Repository;
-import Seeders.GlobalSeeder;
 import service.ItemService;
 import service.ReceiptService;
 
-import java.time.LocalDate;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

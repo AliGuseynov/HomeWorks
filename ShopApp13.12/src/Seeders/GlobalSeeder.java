@@ -4,7 +4,6 @@ import Models.Item;
 import Models.ItemCategorie;
 import Models.Receipt;
 import Models.SaleItem;
-import Repositories.Repository;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
