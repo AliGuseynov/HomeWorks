@@ -35,7 +35,7 @@ public class Main {
         System.out.println("Result" + linkedList.get(1));
 
         // remove index ==============
-        linkedList.removeIndex(2);
+        linkedList.removeIndex(0);
 
         // get item ==============
         System.out.println(linkedList.findItem("Jamal"));
