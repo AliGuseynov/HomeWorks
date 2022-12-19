@@ -3,8 +3,12 @@ package UI;
 import Models.Item;
 import Models.ItemCategorie;
 import Models.Receipt;
+import Repositories.ItemRepo;
+import Repositories.ReceiptRepo;
 import Repositories.Repository;
 import Seeders.GlobalSeeder;
+import service.ItemService;
+import service.ReceiptService;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -12,6 +16,15 @@ import java.util.Scanner;
 public class Ui {
 
     private static Repository repo;
+
+    private static ItemService itemService;
+
+    private static ReceiptService receiptService;
+
+    public static void setServices(ItemService item, ReceiptService receipt){
+        itemService = item;
+        receiptService = receipt;
+    }
     public Ui(Repository repoIn) {
 
         this.repo = repoIn;
@@ -22,6 +35,10 @@ public class Ui {
     }
 
     public static void run(Repository repoIn){
+
+       itemService = new ItemService();
+
+       receiptService = new ReceiptService();
 
        repo = repoIn;
 

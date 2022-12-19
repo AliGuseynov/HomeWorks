@@ -1,8 +1,10 @@
-import Repositories.Repository;
+import Repositories.*;
 
 import java.util.Scanner;
 
 import UI.Ui;
+import service.ItemService;
+import service.ReceiptService;
 
    /*
 
@@ -47,10 +49,18 @@ import UI.Ui;
 public class Main {
     public static void main(String[] args) {
 
+
+        ItemService itemService = new ItemService();
+        ReceiptService receiptService = new ReceiptService();
+
+
         Repository repo = new Repository();
+
+        Ui.setServices(itemService,receiptService);
 
         Ui.run(repo);
 
 
     }
+
 }
