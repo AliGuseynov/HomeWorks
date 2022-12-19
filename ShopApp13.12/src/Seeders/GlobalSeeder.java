@@ -41,9 +41,9 @@ public class GlobalSeeder {
 
             Item tempItem = new Item("name " + i, Math.round(Math.random() * i * 100.0) / 100.0,
                     (int)Math.round(Math.random() * i)+60,
-                    randomCategorie(), globalItemID);
+                    randomCategorie(), globalItemID ++);
 
-            globalItemID ++;
+
 
             items.add(tempItem);
 

@@ -43,6 +43,7 @@ import service.ReceiptService;
     + 5 Verilen tarix araligina gore satislarin gosterilmesi - userden qebul edilen iki tarix araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)
     + 6 Verilen mebleg araligina gore satislarin gosterilmesi - userden qebul edilen iki mebleg araligindaki satislarin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi)
     + 7 Verilmis bir tarixde olan satislarin gosterilmesi  - userden qebul edilmis bir tarixde olan satislarin gosterilmesi(nomresi,meblegi,mehsul sayi,tarixi)
+    + 7 Verilmis bir tarixde olan satislarin gosterilmesi  - userden qebul edilmis bir tarixde olan satislarin gosterilmesi(nomresi,meblegi,mehsul sayi,tarixi)
     + 8 Verilmis nomreye esasen hemin nomreli satisin melumatlarinin gosterilmesi - userden qebul edilmis nomdereye esasen hemin nomreli satisin melumatlarinin gosterilmesi (nomresi,meblegi,mehsul sayi,tarixi, satis itemlari (nomresi,mehsul adi,sayi))"
      */
 
@@ -50,15 +51,14 @@ public class Main {
     public static void main(String[] args) {
 
 
-        ItemService itemService = new ItemService();
-        ReceiptService receiptService = new ReceiptService();
 
 
-        Repository repo = new Repository();
 
-        Ui.setServices(itemService,receiptService);
+//        Repository repo = new Repository();
 
-        Ui.run(repo);
+
+        Ui ui = new Ui();
+        ui.run();
 
 
     }

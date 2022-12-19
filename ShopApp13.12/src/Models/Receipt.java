@@ -46,4 +46,22 @@ public class Receipt {
     public void setPrice(double finalPrice) {
         this.finalPrice = finalPrice;
     }
+
+    public int getItemCount(int itemId, int count){
+        if (this.soldItems.size()>itemId){
+            return this.soldItems.get(itemId).getCount();
+        } else {return 0;}
+    }
+
+    public void returnItem(int itemId, int countIn){
+        int count = soldItems.get(itemId).getCount() - countIn;
+        if (count<0){
+            soldItems.get(itemId).setCount(0);
+        } else {
+            soldItems.get(itemId).setCount(count);}
+    }
+
+    public void setSoldItems(List<SaleItem> soldItems) {
+        this.soldItems = soldItems;
+    }
 }

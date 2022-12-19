@@ -3,6 +3,7 @@ package Repositories;
 import Models.Receipt;
 import Models.SaleItem;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ReceiptRepo {
@@ -12,8 +13,20 @@ public interface ReceiptRepo {
     public Receipt refundItem (String input);
     public Receipt findReceiptById(long receiptId);
     public void printReceipts();
-    public boolean deleteReceipt(String inputId);
+    public Receipt deleteReceipt(LocalDate start, LocalDate end);
     public List<Receipt> findReceiptsByDate(String dates);
-    public List<Receipt> findReceiptsBySpecificDate(String dates);
-    public List<Receipt> findReceiptsByPriceRange(String dates);
+
+    Receipt deleteReceipt(Long inputId);
+
+    List<Receipt> findReceiptsByDate(LocalDate start, LocalDate end);
+
+    public List<Receipt> findReceiptsBySpecificDate(LocalDate dates);
+    public List<Receipt> findReceiptsByPriceRange(double max, double min);
+
+    public void addReceipt(Receipt receipt);
+    public List<Receipt> getAllReceipts();
+
+    public Receipt updateReceipt(Long receiptId, Receipt receipt);
+
+    public int findReceiptLocation(long receiptId);
 }

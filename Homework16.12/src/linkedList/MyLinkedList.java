@@ -54,6 +54,12 @@ public class MyLinkedList <T>{
 
     public void removeIndex(Integer index){
 
+        // check if removed index is 0
+        //==================================
+        //==================================
+        //==================================
+        //==================================
+
         GenericLinkedlistClass ListItem = item0;
         GenericLinkedlistClass PrevItem = null;
         boolean delete = false;

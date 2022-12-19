@@ -18,18 +18,24 @@ public class SaleItem {
         return count;
     }
 
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     public double getSalePrice() {
         return salePrice;
     }
 
     @Override
     public String toString() {
-        return   "itemType=" + itemType.getName() +
-                ", count=" + count +
-                ", salePrice=" + salePrice + "\n";
+        return  "item id= " + itemType.getId() +
+                ", itemType = " + itemType.getName() +
+                ", count = " + count +
+                ", salePrice = " + salePrice + "\n";
     }
 
     public Item getItemType() {
         return itemType;
     }
+
 }
