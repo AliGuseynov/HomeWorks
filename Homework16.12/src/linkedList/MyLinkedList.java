@@ -76,8 +76,8 @@ public class MyLinkedList <T>{
                 }
             }
             if (delete){
-            System.out.println(ListItem.getItem() + " Removed");
-            PrevItem.setNextItem(ListItem.getNextItem());}
+                System.out.println(ListItem.getItem() + " Removed");
+                PrevItem.setNextItem(ListItem.getNextItem());}
             else {System.out.println("Item at index is not exists");}
         } else System.out.println("Item at index is not exists");
     }
@@ -105,18 +105,18 @@ public class MyLinkedList <T>{
         GenericLinkedlistClass foundItem = item0;
 
         if (ListStarted){
-        boolean search = true;
-        while (search){
+            boolean search = true;
+            while (search){
 
-            if (foundItem != null && foundItem.getNextItem() != null){
-                foundItem = foundItem.getNextItem();
-            } else {
-                search = false;
-                return foundItem;
+                if (foundItem != null && foundItem.getNextItem() != null){
+                    foundItem = foundItem.getNextItem();
+                } else {
+                    search = false;
+                    return foundItem;
+                }
             }
-        }
-        return foundItem;
-    }else {
+            return foundItem;
+        }else {
             return item0;
         }}
 
@@ -127,6 +127,5 @@ public class MyLinkedList <T>{
 
 
 
-    }
-
+}
 
