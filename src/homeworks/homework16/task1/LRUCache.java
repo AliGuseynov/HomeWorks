@@ -3,7 +3,7 @@ package homeworks.homework16.task1;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-public class LRUCache<V, T> {
+public class LRUCache<V, T>  {
     private int capacity;
     private HashMap<V, Node<T>> cache;
 
