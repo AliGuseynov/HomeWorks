@@ -53,16 +53,6 @@ public class MyLinkedList<T> {
         }
     }
 
-//    public void find(int item) {
-//        Node current = head;
-//        while (current != null) {
-//            if(item==current.item){
-//                System.out.println();
-//            }
-//        }
-//    }
-
-
     public void print() {
         Node node = head;
 
