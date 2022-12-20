@@ -50,7 +50,11 @@ public class ItemService {
         return itemRepo.findByName(name);
     }
 
-    public void renderGenerateRandomItems(int count) {
+    public Item findById(long id) {
+        return itemRepo.findById(id);
+    }
+
+    public void GenerateRandomItems(int count) {
 
         itemRepo.renderGenerateRandomItems(count);
     }
@@ -59,4 +63,5 @@ public class ItemService {
     public List<Item> getItems() {
         return itemRepo.findAllItems();
     }
+
 }

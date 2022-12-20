@@ -13,6 +13,6 @@ public interface ItemRepo {
     List<Item> findByCategory(String category);
     List<Item> findByPriceRange(double from, double to);
     List<Item> findByName(String name);
-    Item findItemById(long id);
+    Item findById(long id);
     void renderGenerateRandomItems(int count);
 }

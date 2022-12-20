@@ -5,22 +5,28 @@ import model.ItemCategory;
 import model.Receipt;
 import service.ItemService;
 import service.ReceiptService;
-import service.SaleItemService;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
 public class UI {
 
-    private ItemService itemService = new ItemService();
-    private ReceiptService receiptService = new ReceiptService();
-    private SaleItemService saleItemService = new SaleItemService();
+    private ItemService itemService;
+    private ReceiptService receiptService;
 
     private static Scanner scanner = new Scanner(System.in);
 
     public void run() {
         renderStageOption();
+    }
+
+    public UI() {
+
+        this.itemService = new ItemService();
+        this.receiptService = new ReceiptService(itemService);
     }
 
     public void renderStageOption() {
@@ -162,19 +168,19 @@ public class UI {
                     run();
                     break;
                 case 5:
-                    //
+                    renderFindReceiptsByTimeRange();
                     run();
                     break;
                 case 6:
-                    //
+                    renderFindReceiptsByPriceRange();
                     run();
                     break;
                 case 7:
-                    //
+                    renderFindReceiptByDate();
                     run();
                     break;
                 case 8:
-                    //
+                    renderFindReceiptById();
                     run();
                     break;
                 case 9:
@@ -185,10 +191,6 @@ public class UI {
                     System.out.println("Input wrond number");
             }
         }
-
-
-
-
     }
 
     // renderStageItems functions
@@ -293,7 +295,7 @@ public class UI {
         scanner = new Scanner(System.in);
         System.out.println("Input count");
 
-        itemService.renderGenerateRandomItems(scanner.nextInt());
+        itemService.GenerateRandomItems(scanner.nextInt());
 
         renderFindAllItems();
     }
@@ -305,6 +307,7 @@ public class UI {
     public void renderAddReceipt() {
 
         renderFindAllItems();
+
         scanner = new Scanner(System.in);
 
         System.out.println("\nEnter product ID and count: ");
@@ -313,10 +316,30 @@ public class UI {
     }
 
     // 2-2
-    public void renderRefundItem() {}
+    public void renderRefundItem() {
+
+        renderFindAllReceipts();
+        scanner = new Scanner(System.in);
+
+        System.out.println("\nEnter Receipt ID:");
+        long receiptId = scanner.nextLong();
+
+        System.out.println("\nEnter Item ID:");
+        long itemId = scanner.nextLong();
+
+        receiptService.refundSaleItem(receiptId, itemId);
+    }
 
     // 2-3
-    public void renderRefundReceipt() {}
+    public void renderRefundReceipt() {
+
+        renderFindAllReceipts();
+
+        System.out.println("Input receipt Id:");
+        scanner = new Scanner(System.in);
+
+        receiptService.refundReceipt(scanner.nextLong());
+    }
 
     // 2-4
     public void renderFindAllReceipts() {
@@ -327,6 +350,66 @@ public class UI {
 
         for (Receipt e : receipts)
             System.out.println(e);
+    }
+
+    // 2-5
+    public void renderFindReceiptsByTimeRange() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        scanner = new Scanner(System.in);
+
+        System.out.println("\nEnter date range:");
+
+        System.out.println("FROM (YYYY-MM-DD)");
+        LocalDate from = LocalDate.parse(scanner.nextLine(), formatter);
+
+        System.out.println("TO (YYYY-MM-DD)");
+        LocalDate to = LocalDate.parse(scanner.nextLine(), formatter);
+
+        receiptService.findReceiptsByTimeRange(from, to);
+    }
+
+    // 2-6
+    public void renderFindReceiptsByPriceRange() {
+
+        scanner = new Scanner(System.in);
+
+        System.out.println("\nEnter price range:");
+
+        System.out.println("FROM ");
+        double from = scanner.nextDouble();
+
+        System.out.println("TO ");
+        double to = scanner.nextDouble();
+
+        receiptService.findReceiptsByPriceRange(from, to);
+    }
+
+    // 2-7
+    public void renderFindReceiptByDate() {
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        scanner = new Scanner(System.in);
+
+        System.out.println("\nEnter date:");
+
+        System.out.println("FROM (YYYY-MM-DD)");
+        LocalDate date = LocalDate.parse(scanner.nextLine(), formatter);
+
+        receiptService.findReceiptByDate(date);
+    }
+
+    // 2-8
+    public void renderFindReceiptById() {
+
+        renderFindAllReceipts();
+
+        System.out.println("Input Receipts ID:");
+        scanner = new Scanner(System.in);
+
+        System.out.println(
+                receiptService.findReceiptById(scanner.nextLong())
+        );
     }
 
     // -------------------------------------------------------------

@@ -95,7 +95,7 @@ public class ItemRepoImpl implements ItemRepo {
     }
 
     @Override
-    public Item findItemById(long id) {
+    public Item findById(long id) {
 
         for (Item e : itemList)
             if (e.getId() == id)
@@ -103,7 +103,6 @@ public class ItemRepoImpl implements ItemRepo {
 
         return null;
     }
-
 
     @Override
     public void renderGenerateRandomItems(int count) {

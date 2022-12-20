@@ -210,12 +210,8 @@ public class UI {
 
     public static void renderRefundItem() {
 
-        System.out.println(repository.getReceipts());
 
-        System.out.println("Input saleItem ID and receiptId ");
-        scanner = new Scanner(System.in);
 
-        repository.refundItem(scanner.nextLine());
     }
 
     public static void renderRefundReceipt() {
