@@ -1,3 +1,4 @@
+import CacheV2.CacheControllerV2;
 import cache.CacheController;
 import linkedList.MyLinkedList;
 import ui.Ui;
@@ -12,15 +13,20 @@ public class Main {
         //Task 1
 
         CacheController cache = new CacheController(5);
+        CacheControllerV2 cacheController = new CacheControllerV2(3);
 
-//        cache.addData(132);
-//        cache.addData("Test data 123");
-//        cache.addData("Test data two");
-//        System.out.println(cache.getElement(1));
-//        System.out.println(cache.getElement(13));
-//
-//        System.out.println("All data");
-//        cache.getAll();
+
+        cacheController.addItem("1");
+        cacheController.addItem("2");
+        cacheController.addItem("3");
+        cacheController.addItem("4");
+        cacheController.addItem("3");
+        System.out.println("=======");
+        cacheController.printAll();
+        System.out.println("=======");
+//        System.out.println(cacheController.getElement(0));
+//        System.out.println("=======");
+//        cacheController.printAll();
 
 
         ///////////////////////////////////////
@@ -32,22 +38,22 @@ public class Main {
         // addItem ==============
 //        linkedList.addItem(123);
 //        linkedList.addItem("Jamal");
+//        linkedList.addItem("Jamal");
 //        linkedList.addItem("To remove");
 //        linkedList.addItem("Test 2");
 
-//        linkedList.getAllItems();
-
         // remove index ==============
-//        linkedList.removeIndex(0);
+//        System.out.println(linkedList.removeIndex(1) + " deleted");
+
 
         // get index ==============
-//        System.out.println("Result" + linkedList.get(1));
+//        System.out.println("Search result = " + linkedList.getElementAtIndex(1));
 
 
         // get item ==============
-//        System.out.println(linkedList.findItem("Jamal"));
+//        System.out.println("search id " + linkedList.findItem(" "));
 
-        Ui ui = new Ui(cache, linkedList);
+        Ui ui = new Ui(cache, linkedList, cacheController);
         ui.run();
     }
 }

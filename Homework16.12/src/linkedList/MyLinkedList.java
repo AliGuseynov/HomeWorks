@@ -1,131 +1,204 @@
 package linkedList;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 public class MyLinkedList <T>{
 
 
-//    private GenericLinkedlistClass[] LinkedList;
-//
-//
-//
-//    public void addItem(GenericLinkedlistClass item){
-//        GenericLinkedlistClass[] tempArray = new GenericLinkedlistClass[LinkedList.length+1];
-//
-//
-//    }
+    private LinkedListNode<T> item0;
+    private LinkedListNode<T> itemN;
+
+    private int size = 0;
 
 
-    List <GenericLinkedlistClass> LinkedList = new ArrayList<>();
-
-    private GenericLinkedlistClass item0;
-    boolean ListStarted = false;
-
-    private Integer startLocation = 0;
-
-    public void addItem(T item){
-        ListStarted = true;
-        GenericLinkedlistClass lastItem = findLastItem();
-
-        if (lastItem == null){
-            lastItem = new GenericLinkedlistClass(item);
-            item0 = lastItem;
+    public void addItem (T item){
+        if (item0 == null){
+            item0 = new LinkedListNode<>(item);
+            itemN = item0;
         } else {
-            lastItem.setNextItem(new GenericLinkedlistClass(item));
-        }
-
-//        System.out.println(lastItem.getItem());
-    }
-
-    public T get(Integer index){
-        GenericLinkedlistClass ListItem = item0;
-        T item = (T)item0.getItem();
-
-        for (int i = 0; i<index; i++){
-            item = (T)ListItem.getItem();
-            ListItem = ListItem.getNextItem();
-        }
-
-        return item;
-    }
-
-    public void removeIndex(Integer index){
-
-        // check if removed index is 0
-        //==================================
-        //==================================
-        //==================================
-        //==================================
-
-        GenericLinkedlistClass ListItem = item0;
-        GenericLinkedlistClass PrevItem = null;
-        boolean delete = false;
-
-        if (item0 != null) {
-            for (int i = 0; i < index; i++) {
-                PrevItem = ListItem;
-                if (ListItem.getNextItem() != null) {
-                    ListItem = ListItem.getNextItem();
-                    delete = true;
-                } else {
-                    delete = false;
-                    break;
-                }
+            LinkedListNode<T> newItem = new LinkedListNode<>(item);
+            newItem.setPrevItem(itemN);
+            itemN.setNextItem(newItem);
+            if (size == 1){
+            item0.setNextItem(newItem);
             }
-            if (delete){
-                System.out.println(ListItem.getItem() + " Removed");
-                PrevItem.setNextItem(ListItem.getNextItem());}
-            else {System.out.println("Item at index is not exists");}
-        } else System.out.println("Item at index is not exists");
+            itemN = newItem;
+        }
+        size++;
+        System.out.println(itemN);
     }
 
-    public Integer findItem(T item){
-        Integer findIndex = 0;
-        GenericLinkedlistClass ListItem = item0;
+    public T getElementAtIndex(int index){
 
-        while (ListItem != null){
+        if (index>size){ return null;}
+        else {
 
-            if (ListItem.getItem() == item){
-                return findIndex;
+        LinkedListNode<T> tempItem = null;
+        tempItem = item0;
+        for (int i = 0; i<index;i++){
+
+            if (i < index) {
+                tempItem = tempItem.getNextItem();
+            }
+        }
+        return tempItem.getItem();
+    }}
+
+    private LinkedListNode getNodeAtIndex(int index){
+        if (index>size){ return null;}
+        else {
+        LinkedListNode<T> tempItem = null;
+        tempItem = item0;
+        for (int i = 0; i<index;i++){
+            if (i < index){
+                tempItem = tempItem.getNextItem();
+            }
+        }
+        return tempItem;
+    }}
+
+    public LinkedListNode<T> removeIndex(int index){
+        if (index<size || index>=0){
+        LinkedListNode<T> element = getNodeAtIndex(index);
+
+        if (element.getPrevItem() != null && element.getNextItem() != null){
+            element.getPrevItem().setNextItem(element.getNextItem());
+            element.getNextItem().setPrevItem(element.getPrevItem());
+        } else if ((element.getPrevItem() != null &&  element.getNextItem() == null)
+                || (element.getPrevItem() == null &&  element.getNextItem() != null)){
+
+            if (element.getPrevItem() == null){
+                element.getNextItem().setPrevItem(null);
+                item0 = element.getNextItem();
             } else {
-                ListItem = ListItem.getNextItem();
+                element.getPrevItem().setNextItem(null);
+                itemN = element.getPrevItem();
 
-                findIndex++;
             }
+
+        } else {
+            size = 0;
+            item0 = null;
+            itemN = null;
         }
 
-
-        return -1;
+        size--;
+        return element;}
+        else {
+            return null;
+        }
     }
 
-    private GenericLinkedlistClass findLastItem(){
-        GenericLinkedlistClass foundItem = item0;
+    public LinkedListNode<T> removeFirst(){
+        LinkedListNode node = item0;
+        removeIndex(0);
+    return node;}
+    public LinkedListNode<T> removeLast(){
+        LinkedListNode node = itemN;
+        removeIndex(size-1);
+        return node;}
 
-        if (ListStarted){
-            boolean search = true;
-            while (search){
+    public void printList(){
+        boolean whileBreaker = true;
+        LinkedListNode<T> item = item0;
+        while (whileBreaker){
+            System.out.println("Item " + item);
+            if (item.getNextItem() != null){
+            item = item.getNextItem();} else {whileBreaker = false;}
+        }
+    }
 
-                if (foundItem != null && foundItem.getNextItem() != null){
-                    foundItem = foundItem.getNextItem();
-                } else {
-                    search = false;
-                    return foundItem;
-                }
+    public int findItem(T item){
+        int indexOut = -1;
+
+        LinkedListNode<T> tempItem = item0;
+        for (int i = 0; i<size;i++){
+
+            if (Objects.equals(tempItem.getItem(), item.toString())) {
+                indexOut = i;
+                break;
+            } else {
+                System.out.println(item.getClass() + " " + tempItem.getItem().getClass());
+                tempItem = tempItem.getNextItem();
             }
-            return foundItem;
-        }else {
-            return item0;
-        }}
+        }
+        return indexOut;
+    }
+
+    public T removeNode(LinkedListNode<T> node){
+        if (node == item0 && node.getNextItem() != null){
+            item0 = node.getNextItem();
+        } else if (node == itemN && node.getPrevItem() != null){
+            itemN = node.getPrevItem();
+        } else if(size == 1){
+            itemN = null;
+            item0 = null;
+        }
+        T itemN = node.getItem();
+        node.removeSelf();
+        size--;
+        return itemN;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public LinkedListNode addItemToCache(T item){
+
+        LinkedListNode<T> newItem = new LinkedListNode<>(item);
+        if (item0 == null){
+            item0 = new LinkedListNode<>(item);
+            itemN = item0;
+        } else {
+            newItem.setPrevItem(itemN);
+            itemN.setNextItem(newItem);
+            if (size == 1){
+                item0.setNextItem(newItem);
+            }
+            itemN = newItem;
+        }
+        size++;
+        System.out.println(itemN);
+        return newItem;
+    }
+
+    public List<T> getAll(){
+
+        List<T> listOut = new ArrayList<>();
+        LinkedListNode tempItem = item0;
+        for (int i = 0; i<size;i++){
+            listOut.add((T)tempItem.getItem());
+                tempItem = tempItem.getNextItem();
+        }
+        return listOut;
+    }
+
+    public void getNodeToEnd(LinkedListNode node){
 
 
+        removeNode(node);
+        addItem((T)node.getItem());
+//
+//        if (node.getPrevItem() != null && node.getNextItem() != null){
+//            node.getPrevItem().setNextItem(node.getNextItem());
+//            node.getNextItem().setPrevItem(node.getPrevItem());
+//        } else if (node.getPrevItem() != null){
+//
+//            System.out.println("last");
+//        } else {
+//            System.out.println("first");
+//        }
+//
+//
+//        if (node != itemN){
+//        itemN.setNextItem(node);
+//        node.setPrevItem(itemN);
+//        itemN = node;
+//        itemN.setNextItem(null);}
 
-
-
-
-
-
+    }
 }
 
