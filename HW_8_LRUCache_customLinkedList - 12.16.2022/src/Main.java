@@ -37,6 +37,10 @@ public class Main {
 
         System.out.println(result.toString());
 
+        cache.getElement(0);
+
+        System.out.println(result.toString());
+
         cache.addElement("November Rain");
         TimeUnit.SECONDS.sleep(1);
 

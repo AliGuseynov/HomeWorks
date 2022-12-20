@@ -42,8 +42,15 @@ public class LRUCache <T> {
     public T getElement(int index) {
         List<T> keys = new ArrayList<>(cache.keySet());
 
-        if (keys.size()-1 >= index)
-            return keys.get(index);
+        LocalDateTime dateTime = LocalDateTime.now();
+
+        if (keys.size()-1 >= index) {
+
+            T key = keys.get(index);
+            cache.put(key, dateTime);
+
+            return key;
+        }
         else
             return null;
     }
