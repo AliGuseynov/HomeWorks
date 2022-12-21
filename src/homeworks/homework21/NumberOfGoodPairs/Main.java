@@ -13,6 +13,22 @@ public class Main {
             map.put(i, arr[i]);
         }
 
+
+//        for (int i = 0; i < arr.length; i++) {
+//            if (map.containsKey(arr[i])) {
+//
+//                int temp = map.get(arr[i]) + 1;
+//
+//                count = count + temp;
+//                map.put(arr[i], temp);
+//
+//            } else {
+//                map.put(arr[i], 0);
+//            }
+//        }
+//        System.out.println(count);
+
+
         for (int i = 0; i < map.size(); i++) {
             for (int j = i + 1; j < map.size(); j++) {
                 if (map.get(i) == map.get(j)) {

@@ -41,4 +41,6 @@ public class Main {
     public static OptionalDouble averageSum(List<Person> list) {
         return list.stream().mapToDouble(i -> Integer.parseInt(i.getAge())).average();
     }
+
+
 }
