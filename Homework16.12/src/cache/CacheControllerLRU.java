@@ -1,4 +1,4 @@
-package CacheV2;
+package cache;
 
 import linkedList.LinkedListNode;
 import linkedList.MyLinkedList;
@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class CacheControllerV2 <T>{
+public class CacheControllerLRU<T>{
     MyLinkedList linkedList = new MyLinkedList();
 
     HashMap<T , LinkedListNode> listHashmap = new HashMap<>();
 
     int cacheSize;
 
-    public CacheControllerV2(int cacheSize) {
+    public CacheControllerLRU(int cacheSize) {
         this.cacheSize = cacheSize;
     }
 

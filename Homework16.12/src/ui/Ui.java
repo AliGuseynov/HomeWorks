@@ -1,8 +1,6 @@
 package ui;
 
-import CacheV2.CacheControllerV2;
-import cache.CacheController;
-import cache.CacheData;
+import cache.CacheControllerLRU;
 import linkedList.MyLinkedList;
 
 import java.util.Scanner;
@@ -11,29 +9,31 @@ import java.util.regex.Pattern;
 
 public class Ui {
 
-    CacheController cacheController;
     MyLinkedList myLinkedList;
-    CacheControllerV2 cacheControllerV2;
+    CacheControllerLRU cacheControllerLRU;
 
-    public Ui(CacheController cacheController, MyLinkedList myLinkedList, CacheControllerV2 cacheControllerV2) {
-        this.cacheController = cacheController;
-        this.cacheControllerV2 = cacheControllerV2;
+    public Ui(MyLinkedList myLinkedList, CacheControllerLRU cacheControllerLRU) {
+        this.cacheControllerLRU = cacheControllerLRU;
         this.myLinkedList = myLinkedList;
     }
 
     public void run(){
 
         System.out.print("=============== Avaible options\n" +
-                "1- Cache controller\n" +
-                "2- MyLinkedList" +
-                "Enter option: ");
+                "1- Cache controller (LFU)\n" +
+                "2- Cache controller (LRU)\n" +
+                "3- MyLinkedList " +
+                "\nEnter option: ");
         Scanner scanner = new Scanner(System.in);
         String option = scanner.nextLine();
 
         switch (option){
             case "1": RenderCacheController();
                 break;
-            case "2": RenderLinkedList();
+            case "2":
+//                RenderLRUCacheController();
+                break;
+            case "3": RenderLinkedList();
                 break;
             default:
                 run();
@@ -103,7 +103,7 @@ public class Ui {
         System.out.print("===============\nEnter value: ");
         String input = scanner.nextLine();
 //        cacheController.addData(input);
-        cacheControllerV2.addItem(input);
+        cacheControllerLRU.addItem(input);
         run();
     }
 
@@ -122,7 +122,7 @@ public class Ui {
         if(matchFound) {
 
 //            System.out.println(cacheController.getElement(Integer.parseInt(input)));
-            System.out.println(cacheControllerV2.getElement(Integer.parseInt(input)));
+            System.out.println(cacheControllerLRU.getElement(Integer.parseInt(input)));
             whileBreaker = false;
         } }
         run();
@@ -130,7 +130,7 @@ public class Ui {
     }
     public void printAll(){
 //        System.out.println(cacheController.getAll());
-        System.out.println(cacheControllerV2.printAll());
+        System.out.println(cacheControllerLRU.printAll());
 
         run();
 

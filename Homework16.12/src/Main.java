@@ -1,9 +1,7 @@
-import CacheV2.CacheControllerV2;
-import cache.CacheController;
+import cache.CacheControllerLFU;
+import cache.CacheControllerLRU;
 import linkedList.MyLinkedList;
 import ui.Ui;
-
-import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,21 +10,32 @@ public class Main {
 //        System.out.println("Task 1 ============================");
         //Task 1
 
-        CacheController cache = new CacheController(5);
-        CacheControllerV2 cacheController = new CacheControllerV2(3);
+        CacheControllerLRU cacheController = new CacheControllerLRU(3);
+
+        CacheControllerLFU cacheControllerLFU = new CacheControllerLFU<>(3);
 
 
-        cacheController.addItem("1");
-        cacheController.addItem("2");
-        cacheController.addItem("3");
-        cacheController.addItem("4");
-        cacheController.addItem("3");
-        System.out.println("=======");
-        cacheController.printAll();
-        System.out.println("=======");
+//        cacheController.addItem("1");
+//        cacheController.addItem("2");
+//        cacheController.addItem("3");
+//        cacheController.addItem("4");
+//        cacheController.addItem("3");
+//        System.out.println("=======");
+//        cacheController.printAll();
+//        System.out.println("=======");
 //        System.out.println(cacheController.getElement(0));
 //        System.out.println("=======");
 //        cacheController.printAll();
+
+        cacheControllerLFU.addItem("1");
+        cacheControllerLFU.addItem("2");
+        cacheControllerLFU.addItem("3");
+        cacheControllerLFU.addItem("1");
+//        cacheControllerLFU.getElement(1);
+//        cacheControllerLFU.addItem("4");
+//        cacheControllerLFU.addItem("3");
+        cacheControllerLFU.printAll();
+
 
 
         ///////////////////////////////////////
@@ -53,7 +62,8 @@ public class Main {
         // get item ==============
 //        System.out.println("search id " + linkedList.findItem(" "));
 
-        Ui ui = new Ui(cache, linkedList, cacheController);
+        Ui ui = new Ui(linkedList, cacheController);
         ui.run();
+
     }
 }

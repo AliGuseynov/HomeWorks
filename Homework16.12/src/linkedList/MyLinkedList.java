@@ -46,7 +46,7 @@ public class MyLinkedList <T>{
         return tempItem.getItem();
     }}
 
-    private LinkedListNode getNodeAtIndex(int index){
+    public LinkedListNode getNodeAtIndex(int index){
         if (index>size){ return null;}
         else {
         LinkedListNode<T> tempItem = null;
@@ -169,7 +169,7 @@ public class MyLinkedList <T>{
 
         List<T> listOut = new ArrayList<>();
         LinkedListNode tempItem = item0;
-        for (int i = 0; i<size;i++){
+        for (int i = 0; i < size ;i++){
             listOut.add((T)tempItem.getItem());
                 tempItem = tempItem.getNextItem();
         }
@@ -177,28 +177,82 @@ public class MyLinkedList <T>{
     }
 
     public void getNodeToEnd(LinkedListNode node){
-
-
         removeNode(node);
         addItem((T)node.getItem());
-//
-//        if (node.getPrevItem() != null && node.getNextItem() != null){
-//            node.getPrevItem().setNextItem(node.getNextItem());
-//            node.getNextItem().setPrevItem(node.getPrevItem());
-//        } else if (node.getPrevItem() != null){
-//
-//            System.out.println("last");
-//        } else {
-//            System.out.println("first");
-//        }
-//
-//
-//        if (node != itemN){
-//        itemN.setNextItem(node);
-//        node.setPrevItem(itemN);
-//        itemN = node;
-//        itemN.setNextItem(null);}
+    }
 
+    public LinkedListNode moveNode(boolean direction, LinkedListNode node){ //true if forward
+
+        LinkedListNode nextNode = null;
+        LinkedListNode next2Node = null;
+
+
+
+        if (direction){ // moving towards 0
+            if (node.getPrevItem() != null){
+                nextNode = node.getPrevItem();
+
+                if (node.getPrevItem().getPrevItem() != null) {
+                    next2Node = nextNode.getPrevItem();
+                }
+            }
+
+            if (nextNode == null){
+                item0 = node;
+                return node;
+            } else {
+                if (node.getNextItem() != null){
+
+                    if (node.getNextItem() != null){
+                        nextNode.setNextItem(node.getNextItem());
+                    } else { nextNode.setNextItem(null);
+                    itemN = nextNode;}
+
+                    nextNode.setPrevItem(node);
+                }
+                if (next2Node == null){
+                    item0 = node;
+                    return node;
+                } else {
+                    next2Node.setNextItem(node);
+                }
+
+            }
+
+
+        } else { // moving towards last recent added
+
+            if (node.getNextItem() != null){
+                nextNode = node.getNextItem();
+
+                if (node.getNextItem().getNextItem() != null) {
+                    next2Node = nextNode.getNextItem();
+                }
+            }
+
+            if (nextNode == null){
+                itemN = node;
+                return node;
+            } else {
+                if (node.getPrevItem() != null){
+                    if (node.getPrevItem() != null){
+                        nextNode.setPrevItem(node.getPrevItem());
+                    } else {
+                        nextNode.setPrevItem(null);
+                        item0 = nextNode;
+                    }
+
+                    nextNode.setNextItem(node);
+                }
+                if (next2Node == null){
+                    itemN = node;
+                    return node;
+                } else {
+                    next2Node.setPrevItem(node);
+                }
+            }}
+
+        return node;
     }
 }
 
