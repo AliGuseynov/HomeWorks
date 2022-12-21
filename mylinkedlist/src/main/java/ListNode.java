@@ -1,6 +1,6 @@
 public class ListNode {
 
-    int value;
+    public int value;
     ListNode next;
 
     public ListNode(){
