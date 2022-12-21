@@ -13,7 +13,6 @@ public class Main {
             map.put(i, arr[i]);
         }
 
-
 //        for (int i = 0; i < arr.length; i++) {
 //            if (map.containsKey(arr[i])) {
 //
@@ -27,7 +26,6 @@ public class Main {
 //            }
 //        }
 //        System.out.println(count);
-
 
         for (int i = 0; i < map.size(); i++) {
             for (int j = i + 1; j < map.size(); j++) {

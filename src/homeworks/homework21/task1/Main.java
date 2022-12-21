@@ -32,7 +32,6 @@ public class Main {
 
     }
 
-
     public static int sum(List<Person> list) {
         return list.stream().filter(i -> Integer.parseInt(i.getAge()) > 18)
                 .mapToInt(i -> Integer.parseInt(i.getAge())).sum();
