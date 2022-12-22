@@ -37,9 +37,9 @@ public class Main {
 
     public static void agesSum(List<Person> people){
         Integer count1 = people.stream()
-                .filter(person -> Integer.parseInt(person.getAge()) > 18)
                 .map(Person::getAge)
                 .map(Integer::valueOf)
+                .filter(age -> age > 18)
                 .reduce(0, Integer::sum);
 
         System.out.println("Sum of ages above 18 is " + count1);
@@ -49,7 +49,6 @@ public class Main {
                 .map(Person::getAge)
                 .mapToInt(Integer::valueOf)
                 .average().getAsDouble();
-
 
         System.out.println("Average age is " + count1);
     }
