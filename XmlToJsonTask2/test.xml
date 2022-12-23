@@ -1,0 +1,12 @@
+<college>
+    <student>
+        <id>101</id>
+        <name>abc</name>
+        <branch>CS</branch>
+    </student>
+    <student>
+        <id>102</id>
+        <name>xyz</name>
+        <branch>IT</branch>
+    </student>
+</college>
