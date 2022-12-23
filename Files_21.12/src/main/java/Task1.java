@@ -35,8 +35,9 @@ public class Task1 <T>{
 
         List<String> carNumbers = textList.stream()
                 .filter(a -> a.matches("[0-9]{2}[A-Z]{2}[0-9]{3}"))
-                .map(a-> a = "(" + a.substring(2,4) + ")(" + a.substring(0,2) + ")(" + a.substring(4)+")")
+                .map(a-> a = a.substring(2,4) + a.substring(0,2) + a.substring(4))
                 .sorted(Collections.reverseOrder())
+                .map(a-> a = a.substring(2,4) + a.substring(0,2) + a.substring(4))
                 .collect(Collectors.toList());
 
         writeToFile(nums, "Numbers");
