@@ -11,17 +11,17 @@ import java.util.stream.Collectors;
 public class Task1 <T>{
 
     public static void run(){
-        List<String> textList = read();
+        List<String> textList = read("files\\info.txt");
 
         List<String> nums = textList.stream()
-                .filter(a -> a.matches("-?[0-9]+"))
+                .filter(a -> a.matches("-?$\\d+"))
                 .map(Integer::valueOf)
                 .sorted(Collections.reverseOrder())
                 .map(String::valueOf)
                 .collect(Collectors.toList());
 
         List<String> string = textList.stream()
-                .filter(a -> a.matches("[^0-9]+"))
+                .filter(a -> a.matches("[a-zA-Z]+"))
                 .sorted(Collections.reverseOrder())
                 .collect(Collectors.toList());
 
@@ -34,10 +34,10 @@ public class Task1 <T>{
                 .collect(Collectors.toList());
 
         List<String> carNumbers = textList.stream()
-                .filter(a -> a.matches("[0-9]{2}[A-Z]{2}[0-9]{3}"))
+                .filter(a -> a.matches("[0-9]{2}[a-zA-Z]{2}[0-9]{3}"))
                 .map(a-> a = a.substring(2,4) + a.substring(0,2) + a.substring(4))
                 .sorted(Collections.reverseOrder())
-                .map(a-> a = a.substring(2,4) + a.substring(0,2) + a.substring(4))
+                .map(a-> a = a.substring(2,4) + a.substring(0,2).toUpperCase() + a.substring(4))
                 .collect(Collectors.toList());
 
         writeToFile(nums, "Numbers");
@@ -56,10 +56,10 @@ public class Task1 <T>{
     }
 
 
-    public static List<String> read(){
+    public static List<String> read(String filePath){
         List<String> stringsOut =  new ArrayList<>();
         try {
-            File file = new File("files\\info.txt");
+            File file = new File(filePath);
 
             Scanner scanner = new Scanner(file);
 

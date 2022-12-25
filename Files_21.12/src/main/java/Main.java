@@ -10,6 +10,6 @@ public class Main {
 
         //Task3
 //        FileSystemSearch.search("Jamal");
-//        FileSystemSearch.run();
+        FileSystemSearch.run();
     }
 }
