@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student id="1">
+    <address>
+        <city>Baku</city>
+        <creationDate/>
+        <id>1</id>
+        <streat>Meshedi 22</streat>
+    </address>
+    <creationDate/>
+    <name>Nihad</name>
+    <subjects>
+        <id>1</id>
+        <name>Java Bootcamp</name>
+    </subjects>
+    <subjects>
+        <id>2</id>
+        <name>Frontend bootcamp</name>
+    </subjects>
+</student>

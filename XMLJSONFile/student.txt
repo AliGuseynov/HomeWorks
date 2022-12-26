@@ -1,0 +1,1 @@
+{"student":{"address":{"streat":"Meshedi 22","city":"Baku","id":1,"creationDate":""},"subjects":[{"name":"Java Bootcamp","id":1},{"name":"Frontend bootcamp","id":2}],"name":"Nihad","id":1,"creationDate":""}}
