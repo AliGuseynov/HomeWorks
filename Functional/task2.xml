@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <id>1</id>
+    <name>Nezrin</name>
+    <address>
+        <city>Baku</city>
+        <creationTime/>
+        <id>1</id>
+        <street>Nizami kucesi</street>
+    </address>
+    <creationDate>2016-03-23T18:21</creationDate>
+    <subjects>
+        <id>1</id>
+        <name>Math</name>
+    </subjects>
+</student>

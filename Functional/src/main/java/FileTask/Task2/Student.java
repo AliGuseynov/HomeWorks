@@ -3,9 +3,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-
-import java.time.LocalDate;
+import javax.xml.bind.annotation.XmlSchemaType;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @XmlRootElement()
@@ -14,15 +14,26 @@ public class Student {
     private int id;
     private String name;
     private Adress address;
-    private LocalDate creationDate;
+    private String creationDate;
+    List<Subject> subjects;
+
     public Student() {
     }
 
-    public Student(int id, String name, Adress address, LocalDate creationDate) {
+    public Student(int id, String name, Adress address, String creationDate,List<Subject> subjects) {
         this.id = id;
         this.name = name;
         this.address = address;
         this.creationDate = creationDate;
+        this.subjects=subjects;
+    }
+
+    public List<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(List<Subject> subjects) {
+        this.subjects = subjects;
     }
 
     public int getId() {
@@ -43,13 +54,14 @@ public class Student {
     public void setAddress(Adress address) {
         this.address = address;
     }
-    public LocalDate getCreationDate() {
+    public String getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDate creationDate) {
+    public void setCreationDate(String creationDate) {
         this.creationDate = creationDate;
     }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -57,6 +69,7 @@ public class Student {
                 ", name='" + name + '\'' +
                 ", address=" + address +
                 ", creationDate=" + creationDate +
+                ", subjects=" + subjects +
                 '}';
     }
 }

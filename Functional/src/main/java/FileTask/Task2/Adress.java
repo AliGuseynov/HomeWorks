@@ -6,14 +6,16 @@ public class Adress {
     private int id;
     private String street;
     private String city;
+    private LocalDateTime creationTime;
 
     public Adress() {
     }
 
-    public Adress(int id, String streat, String city) {
+    public Adress(int id, String streat, String city,LocalDateTime time) {
         this.id = id;
         this.street = streat;
         this.city = city;
+        this.creationTime=time;
     }
 
     public int getId() {
@@ -24,12 +26,12 @@ public class Adress {
         this.id = id;
     }
 
-    public String getStreat() {
+    public String getStreet() {
         return street;
     }
 
-    public void setStreat(String streat) {
-        this.street = streat;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
     public String getCity() {
@@ -40,13 +42,21 @@ public class Adress {
         this.city = city;
     }
 
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime;
+    }
 
     @Override
     public String toString() {
         return "Adress{" +
                 "id=" + id +
-                ", streat='" + street + '\'' +
+                ", street='" + street + '\'' +
                 ", city='" + city + '\'' +
+                ", time= "+creationTime+
                 '}';
     }
 }
