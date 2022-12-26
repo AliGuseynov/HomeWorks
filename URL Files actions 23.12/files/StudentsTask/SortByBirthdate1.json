@@ -1,0 +1,5 @@
+Student{id=3, name='Vaqif', surname='Cavadov', birthdate=1996-09-24}
+Student{id=2, name='Margot', surname='Robbie', birthdate=1996-09-27}
+Student{id=0, name='John', surname='Smith', birthdate=2006-09-17}
+Student{id=1, name='Ragnar', surname='Lothbrok', birthdate=2007-05-23}
+Student{id=4, name='Vin', surname='Diesel', birthdate=2010-04-13}

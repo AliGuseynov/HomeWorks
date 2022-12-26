@@ -10,13 +10,13 @@ public class Main {
         // Generate students files
 //        Seeder.generateStudentFiles();
 
-        StudentsDecoders.run();
+//        StudentsDecoders.run();
 
 
 
         // Task 2
 //        WebsiteParser.parseWebsite("https://code.edu.az/");
-
+            WebsiteParserV2.parseURL("https://code.edu.az/");
 
 
 

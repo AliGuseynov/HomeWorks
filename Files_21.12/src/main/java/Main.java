@@ -6,7 +6,7 @@ public class Main {
         Task1.run();
 
         //Task2 Unfinished
-//        XMLtoJson.convert();
+        XMLtoJson.convert();
 
         //Task3
 //        FileSystemSearch.search("Jamal");
