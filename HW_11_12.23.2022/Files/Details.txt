@@ -1,0 +1,5 @@
+2,Murad ALishov2,1998-10-10,10B
+3,Murad ALishov3,1998-10-10,11B
+7,Murad ALishov7,1998-10-10,10B
+5,Murad ALishov5,1998-10-10,11B
+1,Murad ALishov,1998-10-10,10B
