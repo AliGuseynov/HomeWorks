@@ -1,0 +1,1 @@
+XMLLocation=Files\\XML\\note.xml
