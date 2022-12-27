@@ -1,0 +1,4 @@
+2022-12-27 19:50:58,248 [main] ERROR org.example.logger.LoggerClass - Error occured dureing call main
+org.example.exceptions.UserException: User exists
+	at org.example.logger.UserChecker.createUser(UserChecker.java:15) ~[classes/:?]
+	at org.example.logger.LoggerClass.main(LoggerClass.java:24) [classes/:?]
