@@ -44,7 +44,8 @@ public class WebsiteParserV2 {
             }
 
         } catch (IOException e) {
-            e.printStackTrace();
+
+//            e.printStackTrace();
         }
     }
 
