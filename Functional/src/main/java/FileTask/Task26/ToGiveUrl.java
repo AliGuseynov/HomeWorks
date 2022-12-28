@@ -10,9 +10,11 @@ import java.util.Set;
 
 public class ToGiveUrl {
     public static void main(String[] args) throws IOException {
-
+        int count=0;
         for (String link : findLinks("https://code.edu.az/")) {
+            count++;
             System.out.println(link);
+            System.out.println(count);
         }
 
     }
