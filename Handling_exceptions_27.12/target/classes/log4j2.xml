@@ -20,7 +20,9 @@
     <Loggers>
         <Root level = "INFO">
             <AppenderRef ref="Console" level="INFO"/>
+            <AppenderRef ref="Console" level="WARN"/>
             <AppenderRef ref="RollingFileAppender" level="INFO"/>
+            <AppenderRef ref="RollingFileAppender" level="WARN"/>
             <AppenderRef ref="RollingFileAppender" level="ERROR"/>
         </Root>
     </Loggers>
