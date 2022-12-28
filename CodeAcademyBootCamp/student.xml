@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<student>
+    <id>1</id>
+    <firstName>leyla</firstName>
+    <lastName>khalilli</lastName>
+    <address>
+        <country>Azerbaycan</country>
+        <city>Baki</city>
+    </address>
+    <studentInformation>
+        <birthday>2001-08-26</birthday>
+        <fatherName>Yadigar</fatherName>
+        <formatter/>
+    </studentInformation>
+</student>
