@@ -1,0 +1,9 @@
+2022-12-28 23:59:54,581 [main] WARN Main - Task 5 error
+java.io.FileNotFoundException:  (??????? ?? ??????? ????? ????????? ????)
+	at java.io.FileInputStream.open0(Native Method) ~[?:?]
+	at java.io.FileInputStream.open(FileInputStream.java:219) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:158) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:112) ~[?:?]
+	at java.io.FileReader.<init>(FileReader.java:60) ~[?:?]
+	at Main.task5(Main.java:86) [classes/:?]
+	at Main.main(Main.java:26) [classes/:?]
