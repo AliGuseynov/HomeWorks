@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 2,Murad ALishov2,1998-10-10,10B
 3,Murad ALishov3,1998-10-10,11B
 7,Murad ALishov7,1998-10-10,10B
 5,Murad ALishov5,1998-10-10,11B
+=======
+2,Murad ALishov2,1998-10-10,10B
+3,Murad ALishov3,1998-10-10,11B
+7,Murad ALishov7,1998-10-10,10B
+5,Murad ALishov5,1998-10-10,11B
+>>>>>>> 493c8691dbc7be9d753c564dfaf67970b5e64e2c
 1,Murad ALishov,1998-10-10,10B

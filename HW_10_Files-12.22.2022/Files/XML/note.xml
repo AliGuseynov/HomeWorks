@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 <note>
     <to>Tove</to>
     <from>Jani</from>
     <heading>Reminder</heading>
     <body>Don't forget me this weekend!</body>
+=======
+<note>
+    <to>Tove</to>
+    <from>Jani</from>
+    <heading>Reminder</heading>
+    <body>Don't forget me this weekend!</body>
+>>>>>>> 493c8691dbc7be9d753c564dfaf67970b5e64e2c
 </note>
