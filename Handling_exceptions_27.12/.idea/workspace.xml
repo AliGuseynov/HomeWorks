@@ -5,8 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bca9b9b6-f1f4-4e95-a047-920eba0f06ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Annotations/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Annotations/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Annotations/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Annotations/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Annotations/src/main/java/org/example/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Annotations/src/main/java/org/example/HanoiTower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Annotations/src/test/java/org/example/AppTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../URL Files actions 23.12/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../URL Files actions 23.12/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../URL Files actions 23.12/src/main/java/homework23_12/WebsiteParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../URL Files actions 23.12/src/main/java/homework23_12/WebsiteParserV2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../URL Files actions 23.12/src/main/java/homework23_12/WebsiteParserV2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../URL Files actions 23.12/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../URL Files actions 23.12/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../URL Files actions 23.12/target/classes/homework23_12/WebsiteParserV2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../URL Files actions 23.12/target/classes/homework23_12/WebsiteParserV2.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/PC/IdeaProjects/Workshop",
+    "last_opened_file_path": "C:/Users/PC/IdeaProjects/shared/Handling_exceptions_27.12",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -61,7 +72,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672169411349</updated>
       <workItem from="1672169414719" duration="458000" />
-      <workItem from="1672247059592" duration="9820000" />
+      <workItem from="1672247059592" duration="11470000" />
+      <workItem from="1672300170563" duration="1481000" />
     </task>
     <servers />
   </component>

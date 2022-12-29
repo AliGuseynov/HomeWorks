@@ -17,10 +17,12 @@ public class WebsiteParserV2 {
     private static int counter = 0;
     private static Set<String> linksList = new HashSet<>();
 
-    public static void parseURL(String url) {
+    private static int levels = 0;
+
+    public static void parseURL(String url, int level) {
+
+
         Document document;
-
-
 
 
         try {
@@ -30,18 +32,20 @@ public class WebsiteParserV2 {
             //Get links from document object.
             Elements links = document.select("a[href]");
 
-
+            int nextLevel = level+1;
             for (Element link : links) {
                 String linkS = link.attr("href");
 
 //                System.out.println("test " + link);
                 if (!linksList.contains(linkS) && linkS.contains("https://code.edu.az/")){
                     linksList.add(linkS);
-                    parseURL(linkS);
-                    System.out.println("Link " + ++counter + " : " + linkS);
+                    parseURL(linkS, nextLevel);
+                    System.out.println("Link " + ++counter + " : " +linkS);
                 }
 
             }
+
+            System.out.println("Level: " + nextLevel);
 
         } catch (IOException e) {
 
