@@ -14,23 +14,18 @@ public class ToGiveUrl {
         for (String link : findLinks("https://code.edu.az/")) {
             count++;
             System.out.println(link);
-            System.out.println(count);
         }
+        System.out.println(count);
 
     }
 
     private static Set<String> findLinks(String url) throws IOException {
-
         Set<String> links = new HashSet<>();
-
         Document doc = Jsoup.connect(url).get();
-
         Elements elements = doc.select("a[href]");
         for (Element element : elements) {
             links.add(element.attr("href"));
         }
-
         return links;
-
     }
 }
