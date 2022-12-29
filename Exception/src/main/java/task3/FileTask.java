@@ -1,6 +1,6 @@
-package Task3;
+package task3;
 
-import Task2.CheckedException;
+import task2.CheckedException;
 
 import java.io.*;
 

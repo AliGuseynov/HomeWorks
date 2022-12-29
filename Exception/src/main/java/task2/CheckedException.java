@@ -1,6 +1,5 @@
-package Task2;
+package task2;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class CheckedException extends IOException {

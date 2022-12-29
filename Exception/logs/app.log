@@ -1,0 +1,9 @@
+2022-12-29 23:55:25,047 [main] WARN org.example.Task5 - Task 5 error
+java.io.FileNotFoundException: Error time (The system cannot find the file specified)
+	at java.io.FileInputStream.open0(Native Method) ~[?:?]
+	at java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
+	at java.io.FileReader.<init>(FileReader.java:60) ~[?:?]
+	at org.example.Task5.task5(Task5.java:35) ~[classes/:?]
+	at org.example.Main.main(Main.java:33) ~[classes/:?]

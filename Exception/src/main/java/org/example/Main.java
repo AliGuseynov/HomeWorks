@@ -1,16 +1,12 @@
 package org.example;
 
-import Task1.MyExceptionNullPointer;
-import Task1.Person;
-import Task2.CheckedException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
+import task4.Task4;
 
 public class Main {
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) throws CheckedException {
+
+    public static void main(String[] args)  {
 //        Person person= new Person();
 //        if(person.name==null){
 //            try{
@@ -24,16 +20,18 @@ public class Main {
 //        } catch (FileNotFoundException e) {
 //            throw new CheckedException("error");
 //        }
-        try {
-            System.out.println(divided(2, 0));
-        } catch (ArithmeticException arithmeticException) {
-            LOGGER.error("Loglar",arithmeticException);
-        }
+//        Scanner sc = new Scanner(System.in);
+//        while (true) {
+//            int a = sc.nextInt();
+//            int b = sc.nextInt();
+//            try {
+//                division(a, b);
+//            } catch (ArithmeticException ex) {
+//                System.out.println("Please enter the appropriate digits");
+//            }
+//        }
+Task5.task5();
 
     }
 
-    public static double divided(double a, double b) {
-        double result = a / b;
-        return result;
-    }
 }
