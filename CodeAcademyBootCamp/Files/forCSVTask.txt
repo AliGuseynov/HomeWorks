@@ -1,0 +1,5 @@
+leyla khalilli,21,java
+sabi semedova,23,c#
+nicat hesenli,25,cyber security
+nergiz ahmedova,22, java
+

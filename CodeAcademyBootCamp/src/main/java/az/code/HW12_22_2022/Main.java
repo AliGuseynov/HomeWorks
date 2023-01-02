@@ -56,7 +56,7 @@ public class Main {
             Student student = (Student) unmarshaller.unmarshal(file);
             System.out.println(student + " " + student.getFirstName() + "" + student.getLastName());
 
-        } catch (JAXBException e) {
+        } catch (JAXBException e)               {
             e.printStackTrace();
         }
     }
