@@ -1,0 +1,13 @@
+<student>
+    <id>1</id>
+    <firstName>Lala</firstName>
+    <lastName>Azizli</lastName>
+    <address>
+        <country>Azerbaijan</country>
+        <city>Ganja</city>
+    </address>
+    <studentInformation>
+        <birthday>1998-07-07</birthday>
+        <study>Computer Engineering</study>
+    </studentInformation>
+</student>
