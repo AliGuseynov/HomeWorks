@@ -1,23 +1,29 @@
-package org.example;
+package org.example.models;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
+import org.example.serializeanddeserialize.LocalDateDeserializer;
+import org.example.serializeanddeserialize.LocalDateSerializer;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 @XmlRootElement
 public class Student {
     private int id;
     private String name;
     private Address address;
-    private LocalDateTime creationDate;
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    private LocalDate creationDate;
     private List<Subject> subjects;
 
     public Student() {
     }
 
-    public Student(int id, String name, Address address, LocalDateTime creationDate, List<Subject> subjects) {
+    public Student(int id, String name, Address address, LocalDate creationDate, List<Subject> subjects) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -49,11 +55,11 @@ public class Student {
         this.address = address;
     }
     @XmlElement
-    public LocalDateTime getCreationDate() {
+    public LocalDate getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(LocalDateTime creationDate) {
+    public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
     @XmlElement
@@ -63,5 +69,16 @@ public class Student {
 
     public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address=" + address +
+                ", creationDate=" + creationDate +
+                ", subjects=" + subjects +
+                '}';
     }
 }

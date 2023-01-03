@@ -1,4 +1,4 @@
-package org.example;
+package org.example.models;
 
 public class Subject {
     private int id;
@@ -26,5 +26,13 @@ public class Subject {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

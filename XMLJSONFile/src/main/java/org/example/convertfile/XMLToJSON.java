@@ -1,4 +1,4 @@
-package org.example;
+package org.example.convertfile;
 
 import org.json.JSONObject;
 import org.json.XML;
@@ -13,7 +13,7 @@ public class XMLToJSON {
             str += line;
         }
         JSONObject jsondata = XML.toJSONObject(str);
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\nihad\\IdeaProjects\\XMLJSONFile\\student.txt"));) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("C:\\Users\\nihad\\IdeaProjects\\XMLJSONFile\\student.json"))) {
             bw.write(String.valueOf(jsondata));
             bw.close();
         }
