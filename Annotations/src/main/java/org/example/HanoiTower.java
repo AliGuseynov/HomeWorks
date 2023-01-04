@@ -10,7 +10,9 @@ public class HanoiTower {
             return;
         }
         towerOfHanoi(n-1, from_rod, aux_rod, to_rod);
+
         System.out.println("Disk " + n + " " +  from_rod + " -> " + to_rod);
+
         towerOfHanoi(n-1, aux_rod, to_rod, from_rod);
     }
 
