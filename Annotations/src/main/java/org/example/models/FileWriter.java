@@ -8,7 +8,8 @@ public class FileWriter {
     public static void writeCars(List<Car> cars, String file){
         StringBuilder str = new StringBuilder();
         str.append("id,manufacturer,model,engineSize,productionCountry,driveWheels\n");
-        cars.forEach(a-> str.append(a.toCSV()));
+//        cars.forEach(a-> str.append(a.toCSV()));
+        cars.forEach(a-> str.append(CsvMapper.carToCSV(a)));
         writeToFile(str, file);
     }
 

@@ -1,5 +1,5 @@
 id,manufacturer,model,engineSize,productionCountry,driveWheels
-null,bmw,320,2000,Germany,RWD
-null,BMW,330,3000,Germany,RWD
-null,BMW,540,4400,Germany,RWD
-null,Mercedes,e500,5000,Germany,RWD
+,bmw,320,2000,,
+,BMW,330,3000,,
+,BMW,540,4400,,
+,Mercedes,e500,5000,,

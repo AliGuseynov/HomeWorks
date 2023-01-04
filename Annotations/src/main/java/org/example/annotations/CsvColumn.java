@@ -10,6 +10,8 @@ import java.lang.annotation.Target;
 public @interface CsvColumn {
     public String name() default "";
 
+    public String model() default "";
+
     public int engineSize() default 1600;
 
     public String driveWheels() default "RWD";

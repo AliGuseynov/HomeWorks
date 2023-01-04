@@ -4,6 +4,11 @@ import lombok.*;
 import org.example.annotations.Csv;
 import org.example.annotations.CsvColumn;
 
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+
 @Csv
 @Data
 @Builder(toBuilder = true)
