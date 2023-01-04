@@ -16,21 +16,21 @@ public class App
     {
 
 
-        List<Car> carsList = new ArrayList<>();
-        Car bmw = Car.builder().manufacturer("bmw").model("320").engineSize("2000").productionYear(1995).build();
-        carsList.add(bmw);
-        carsList.add(new Car("BMW","330", 2004, "3000"));
-        carsList.add(new Car("BMW","540", 2004, "4400"));
-        carsList.add(new Car("Mercedes","e500", 1996, "5000"));
-
-//         Task object to CSV
-        FileWriter.writeCars(carsList, "files\\carsExport.csv");
+//        List<Car> carsList = new ArrayList<>();
+//        Car bmw = Car.builder().manufacturer("bmw").model("320").engineSize("2000").productionYear(1995).build();
+//        carsList.add(bmw);
+//        carsList.add(new Car("BMW","330", 2004, "3000"));
+//        carsList.add(new Car("BMW","540", 2004, "4400"));
+//        carsList.add(new Car("Mercedes","e500", 1996, "5000"));
+//
+////         Task object to CSV
+//        FileWriter.writeCars(carsList, "files\\carsExport.csv");
 
         // Task CSV to object
 //        FileReader.readFile("files\\carsExport.csv");
 
 
         // Hanoi tower task
-//        HanoiTower.towerOfHanoi(4, 'A','C','B');
+        HanoiTower.towerOfHanoi(8, 'A','C','B');
     }
 }
