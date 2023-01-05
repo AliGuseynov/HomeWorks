@@ -16,8 +16,10 @@ public class CsvMapper {
                     name = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
                     Method method = Student.class.getMethod(name, String.class);
                     method.invoke(s, columnAnnotation.name() + "-" + i++);
+                    System.out.println(name);
                 }
             }
+
         }
         System.out.println(s);
     }

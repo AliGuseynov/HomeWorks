@@ -11,23 +11,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Student {
-    //    @CsvColumn(name = "ID")
+    @CsvColumn(name = "ID")
     private Long id;
-    @CsvColumn(name = "alias")
+    @CsvColumn(name = "Name")
     private String name;
     @CsvColumn
     private String surname;
     int age;
 
-    public String getName() {
-        return name + name;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", name='" + getName() + '\'' +
+                ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
                 '}';
