@@ -3,11 +3,12 @@ package org.example.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.opencsv.bean.CsvBindByName;
+import com.opencsv.bean.CsvDate;
 import org.example.serializeanddeserialize.LocalDateDeserializer;
 import org.example.serializeanddeserialize.LocalDateSerializer;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public class Address {
     private int id;
@@ -15,6 +16,7 @@ public class Address {
     private  String city;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
+    @CsvDate
     private LocalDate creationDate;
     public Address()
     {

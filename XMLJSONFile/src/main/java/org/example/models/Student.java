@@ -10,14 +10,19 @@ import org.example.serializeanddeserialize.LocalDateSerializer;
 
 import java.time.LocalDate;
 import java.util.List;
+
 @XmlRootElement
 public class Student {
+
     private int id;
+
     private String name;
+
     private Address address;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
     private LocalDate creationDate;
+
     private List<Subject> subjects;
 
     public Student() {
@@ -30,6 +35,7 @@ public class Student {
         this.creationDate = creationDate;
         this.subjects = subjects;
     }
+
     @XmlAttribute
     public int getId() {
         return id;
@@ -38,6 +44,7 @@ public class Student {
     public void setId(int id) {
         this.id = id;
     }
+
     @XmlElement
     public String getName() {
         return name;
@@ -46,6 +53,7 @@ public class Student {
     public void setName(String name) {
         this.name = name;
     }
+
     @XmlElement
     public Address getAddress() {
         return address;
@@ -54,6 +62,7 @@ public class Student {
     public void setAddress(Address address) {
         this.address = address;
     }
+
     @XmlElement
     public LocalDate getCreationDate() {
         return creationDate;
@@ -62,6 +71,7 @@ public class Student {
     public void setCreationDate(LocalDate creationDate) {
         this.creationDate = creationDate;
     }
+
     @XmlElement
     public List<Subject> getSubjects() {
         return subjects;
