@@ -30,4 +30,9 @@ public class Person {
                 ", course='" + course + '\'' +
                 '}';
     }
+
+    public String toCSV(){
+        return fullName + "," + age + "," + course + ",,\n";
+    }
+
 }

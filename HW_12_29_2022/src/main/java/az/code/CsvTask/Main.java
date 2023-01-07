@@ -1,8 +1,10 @@
 package az.code.CsvTask;
 
 import az.code.CsvTask.mapper.CsvMap;
+import az.code.CsvTask.mapper.ToCsv;
 import az.code.CsvTask.model.Person;
 
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -30,6 +32,8 @@ public class Main {
 
         CsvMap csvMap = new CsvMap();
         List<Person> people = csvMap.parse(Paths.get("C:\\JavaCodeAcademy\\HW_12_29_2022\\person.csv"), Person.class);
-        System.out.println(people);
+//        System.out.println(people);
+
+        ToCsv.writePerson(people, "C:\\JavaCodeAcademy\\HW_12_29_2022\\toCSV.csv");
     }
 }
