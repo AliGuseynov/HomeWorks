@@ -13,13 +13,13 @@ import lombok.NoArgsConstructor;
 @Builder
 @Csv
 public class Person {
-    @CsvColumn(name = "NAME_SURNAME")
+    @CsvColumn(column = "NAME_SURNAME")
     private String fullName;
 
-//    @CsvColumn
-    private Integer age;
+    @CsvColumn(column = "AGE")
+    private String age;
 
-    @CsvColumn
+    @CsvColumn(column = "COURSE")
     private String course;
 
     @Override

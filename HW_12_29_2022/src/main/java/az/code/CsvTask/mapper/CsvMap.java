@@ -38,14 +38,12 @@ public class CsvMap {
 
     public Map<Integer, Field> getHeaders(Class<Person> personClass, List<String> firstLine) {
 
-        Map<Integer, Field> map = new HashMap<>();
+       final Map<Integer, Field> map = new HashMap<>();
         Stream.of(personClass.getDeclaredFields())
-                .filter(field -> field.getAnnotation(Csv.class) != null)
+                .filter(field -> field.getAnnotation(CsvColumn.class) != null)
                 .forEach(field -> {
                     CsvColumn csvColumn = field.getAnnotation(CsvColumn.class);
-                    Csv csvField = field.getAnnotation(Csv.class);
-                    String columnName = csvColumn.name()
-                            .trim();//????
+                    String columnName = csvColumn.column().trim();
                     int columnIndex = firstLine.indexOf(columnName);
                     map.put(columnIndex, field);
 
@@ -55,19 +53,23 @@ public class CsvMap {
 
 
     public Person getPerson(Class<Person> personClass, Map<Integer, Field> header, List<String> line) {
+
         try {
-            Person person = personClass.getDeclaredConstructor().newInstance();
+            Person obj = personClass.getDeclaredConstructor()
+                    .newInstance();
+
             for (int index = 0; index < line.size(); index++) {
                 Field field = header.get(index);
                 String fieldName = field.getName();
-                Optional<Method> setter = getSetterMethod(person, fieldName);
+                Optional<Method> setter = getSetterMethod(obj, fieldName);
 
                 if (setter.isPresent()) {
                     Method setMethod = setter.get();
-                    setMethod.invoke(person, line.get(index));
+                    setMethod.invoke(obj, line.get(index));
                 }
             }
-            return person;
+
+            return obj;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -77,10 +79,14 @@ public class CsvMap {
     }
 
     public Optional<Method> getSetterMethod(Person person, String fieldName) {
+
         return Arrays.stream(person.getClass()
                         .getDeclaredMethods())
                 .filter(method -> method.getName()
-                        .equals("set" + fieldName.substring(0, 1).toUpperCase() + fieldName.substring(1))).findFirst();
+                        .equals("set" + fieldName.substring(0, 1)
+                                .toUpperCase()
+                                + fieldName.substring(1)))
+                .findFirst();
 
 
     }
