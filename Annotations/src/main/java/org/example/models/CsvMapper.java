@@ -38,6 +38,7 @@ public class CsvMapper{
     public static String carToCSV(Car car){
         StringBuilder csvOut = new StringBuilder();
         csvOut.append(",");
+
         if(car.getClass().isAnnotationPresent(Csv.class)){
 
 
