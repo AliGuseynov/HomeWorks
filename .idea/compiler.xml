@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TaskFile" />
+        <module name="Threads" />
         <module name="HW_12_29_2022" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="HW_12_29_2022" target="17" />
       <module name="TaskFile" target="17" />
+      <module name="Threads" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

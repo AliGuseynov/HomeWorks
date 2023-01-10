@@ -9,9 +9,10 @@ public class ZeroEvenOdd {
     Semaphore even = new Semaphore(0);
     Semaphore odd = new Semaphore(0);
 
-//    public ZeroEvenOdd(int number) {
-//        this.number = number;
-//    }
+    public ZeroEvenOdd(int number) {
+        this.number = number;
+
+    }
 
     public ZeroEvenOdd() {
     }
