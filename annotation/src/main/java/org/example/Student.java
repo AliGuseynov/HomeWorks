@@ -3,6 +3,8 @@ import lombok.*;
 import org.example.az.code.annotations.Csv;
 import org.example.az.code.annotations.CsvColumn;
 
+import static sun.security.pkcs.PKCS9Attribute.getName;
+
 @Csv
 @Data
 @Builder(toBuilder = true)
@@ -25,14 +27,16 @@ public class Student {
         this.age = age;
     }
 
+    public Student() {
 
+    }
 
 
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
-                ", name='" + getName() + '\'' +
+                ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", age=" + age +
                 '}';
