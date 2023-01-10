@@ -32,8 +32,8 @@ public class Main {
 
         CsvMap csvMap = new CsvMap();
         List<Person> people = csvMap.parse(Paths.get("C:\\JavaCodeAcademy\\HW_12_29_2022\\person.csv"), Person.class);
-//        System.out.println(people);
+        System.out.println(people);
 
-        ToCsv.writePerson(people, "C:\\JavaCodeAcademy\\HW_12_29_2022\\toCSV.csv");
+//        ToCsv.writePerson(people, "C:\\JavaCodeAcademy\\HW_12_29_2022\\toCSV.csv");
     }
 }

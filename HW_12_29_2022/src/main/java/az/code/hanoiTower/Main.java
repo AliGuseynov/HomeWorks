@@ -3,7 +3,7 @@ package az.code.hanoiTower;
 public class Main {
     public static void main(String[] args) {
 
-        String hanoiStep = hanoiTower(5, 1, 3);
+        String hanoiStep = hanoiTower(30, 1, 3);
 
         for (String step : hanoiStep.split(" ")) {
             System.out.println(step);

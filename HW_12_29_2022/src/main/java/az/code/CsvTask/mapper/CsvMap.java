@@ -17,7 +17,6 @@ import java.util.stream.Stream;
 public class CsvMap {
     private static int firstLineIndex = 0;
 
-
     public List<Person> parse(Path path, Class<Person> personClass) throws IOException {
         List<List<String>> lines = Files.readAllLines(path)
                 .stream()
