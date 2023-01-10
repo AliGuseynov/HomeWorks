@@ -1,0 +1,28 @@
+47	Ali&Nino	Azerconnect-1
+47	Ali&Nino	Azerconnect-3
+26	Atelier 61 Grill & Terrace	FinDynamix-CİB
+94	AVOCADO	DSC-5
+30	BatutArenaBaku	Azerconnect-1
+15	CAMEL ACTIVE	DSC-5
+102	CinemaPlus	Azerconnect-3
+77	EVERGREEN	FinDynamix-CİB
+88	EXPARGO	FinDynamix-CİB
+19	Hard Rock Cafe Baku	Azerconnect-1
+19	Hard Rock Cafe Baku	FinDynamix-Cİ
+41	JetEx	Customer-support-test
+46	Karandash Store	Customer-support-test
+64	KSpace Beauty Shop	Customer-support-test
+78	Mi Home.az	FinDynamix-CİB
+87	MyShops	Azerconnect-1
+86	Ozon Optik	DSC-4
+86	Ozon Optik	FinDynamix-Cİ
+57	PUMA	Azerconnect-1
+57	PUMA	DSC-4
+57	PUMA	FinDynamix-CİB
+60	SMART ELECTRONICS	Azerconnect-1
+60	SMART ELECTRONICS	DSC-4
+76	Solido	FinDynamix-CİB
+33	Sushim Baku	FinDynamix-CİB
+62	Yves Rocher	Azerconnect-1
+62	Yves Rocher	Azerconnect-3
+62	Yves Rocher	FinDynamix-CİB
