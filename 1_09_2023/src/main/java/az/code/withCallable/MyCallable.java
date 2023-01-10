@@ -25,7 +25,6 @@ public class MyCallable implements Callable<Integer> {
 
 
             while ((line = br.readLine()) != null) {
-
                 final String tempLine = line;
 
 //            result = executorService.submit(() -> Thread.currentThread().getName() + "-" + tempLine.split(" ")
