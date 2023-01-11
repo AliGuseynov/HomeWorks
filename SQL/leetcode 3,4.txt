@@ -1,0 +1,14 @@
+===== Task 3
+
+SELECT firstName, lastName , city, state
+FROM Person 
+LEFT JOIN Address 
+ON Address.personId=Person.personId;
+
+===== Task 4
+
+SELECT emp.name AS "Employee"
+from Employee emp
+LEFT JOIN Employee AS man
+on emp.managerId = man.id
+where emp.salary> man.salary

@@ -1,0 +1,11 @@
+Task 2
+
+SELECT DISTINCT CITY 
+FROM STATION
+WHERE CITY NOT RLIKE '[AEIOU]$';
+
+----------------------------------
+Task 5
+
+SELECT NAME FROM Employee
+Where salary > 2000 and months < 10
