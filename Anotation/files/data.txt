@@ -1,0 +1,30 @@
+id	store	clinet	store%	paymnet%	amount	count
+47	Ali&Nino	Azerconnect-1	7.5	2.5	50.00	1
+47	Ali&Nino	Azerconnect-3	7.5	2.5	50.00	1
+26	Atelier 61 Grill & Terrace	FinDynamix-CİB	7.5	2.5	50.00	1
+94	AVOCADO	DSC-5	6.5	2.5	100.00	1
+30	BatutArenaBaku	Azerconnect-1	7.5	2.5	100.00	2
+15	CAMEL ACTIVE	DSC-5	7.5	2.5	100.00	1
+102	CinemaPlus	Azerconnect-3	5.5	2.5	20.00	1
+77	EVERGREEN	FinDynamix-CİB	5.5	2.5	20.00	1
+88	EXPARGO	FinDynamix-CİB	7.5	2.5	20.00	1
+19	Hard Rock Cafe Baku	Azerconnect-1	7.5	2.5	50.00	1
+19	Hard Rock Cafe Baku	FinDynamix-CİB	7.5	2.5	100.00	2
+41	JetEx	Customer-support-test	5.5	2.5	30.00	1
+46	Karandash Store	Customer-support-test	7.5	2.5	50.00	1
+64	KSpace Beauty Shop	Customer-support-test	2.5	2.5	100.00	1
+78	Mi Home.az	FinDynamix-CİB	5.5	2.5	20.00	1
+87	MyShops	Azerconnect-1	3.5	2.5	50.00	1
+86	Ozon Optik	DSC-4	12.5	2.5	100.00	1
+86	Ozon Optik	FinDynamix-CİB	12.5	2.5	20.00	1
+57	PUMA	Azerconnect-1	3.5	2.5	50.00	1
+57	PUMA	DSC-4	3.5	2.5	100.00	1
+57	PUMA	FinDynamix-CİB	3.5	2.5	20.00	1
+60	SMART ELECTRONICS	Azerconnect-1	2.5	2.5	100.00	2
+60	SMART ELECTRONICS	DSC-4	2.5	2.5	100.00	1
+76	Solido	FinDynamix-CİB	7.5	2.5	20.00	1
+33	Sushim Baku	FinDynamix-CİB	11.5	2.5	20.00	1
+8	Toys Toys	FinDynamix-CİB	5.5	2.5	100.00	1
+62	Yves Rocher	Azerconnect-1	5.5	2.5	250.00	5
+62	Yves Rocher	Azerconnect-3	5.5	2.5	150.00	3
+62	Yves Rocher	FinDynamix-CİB	5.5	2.5	600.00	12
