@@ -1,127 +1,58 @@
 package TableTask;
 
-import com.opencsv.CSVWriter;
-
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.*;
 
 public class TaskToTable {
-    public static void main(String[] args) {
-        String path = "C:\\Users\\user\\Desktop\\dataoftable.txt";
-//       Set<String> store=AllStore(path);
-//        System.out.println(store);
-        Set<String> client=AllClients(path);
-//        System.out.println(client);
-        List<Store> tt=readAllFromFile(path);
-        for (Store t:tt){
-            System.out.println(t);
-        }
 
+    static TreeSet<String> clients=new TreeSet<>();
+    static HashMap<String, Store> sales = new HashMap<>();
+    static List<String> storeIds = new ArrayList<>();
 
+    public static void readFile() {
         String line = "";
         String [] values = null;
-
-        Store data=null;
+        int n=0;
         try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
+            BufferedReader br = new BufferedReader(new FileReader("files\\tabledata.txt"));
             int iterator = 0;
             while ((line = br.readLine()) != null) {
                 if (iterator == 0) {
                     iterator++;
                     continue;
                 }
-                values = line.split(",");
-                data = Stores(values);
+                if (n!= 0) {
+                    HashMap<String, Double> saleData = new HashMap<>();
+                    values = line.split("\t");
+                    clients.add(values[2]);
+                    if (sales.containsKey(values[0])) {
+                        Store saleUnit = addSaleToList(sales.get(values[0]), values);
+                        sales.put(values[0], saleUnit);
+                    }else {
+                        storeIds.add(values[0]);
+                        saleData.put(values[2], Double.valueOf(values[5]));
+                        sales.put(values[0], new Store(Integer.parseInt(values[0]), values[1], Double.parseDouble(values[5]), saleData));
+                    }
+
+                }
+                n++;
+
             }
+            System.out.println("Sales calculated..");
+            ExcelLogic.exportXLSX(storeIds,sales,clients);
         }catch(IOException e){
                 e.printStackTrace();
         }
-        List<String> s= ExcelLogic.amountAdder(client,data);
-        for (String ss:s){
-            System.out.println(ss);
+    }
+
+    private static Store  addSaleToList(Store saleUnit, String [] sArr){
+        HashMap<String, Double> companiesSold = saleUnit.getMap();
+        saleUnit.setPrice(saleUnit.getPrice() + Double.parseDouble(sArr[5]));
+        if (companiesSold.containsKey(sArr[2])){
+            saleUnit.getMap().put(sArr[2], saleUnit.getMap().get(sArr[2]) + Integer.parseInt(sArr[5]));
+        } else {
+            saleUnit.getMap().put(sArr[2], Double.valueOf(sArr[5]));
         }
-
+        return saleUnit;
     }
-    public static Set<String> AllStore(String path){
-        Set<String> stores=new HashSet<>();
-        String line = "";
-        String [] values = null;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
-            int iterator=0;
-            while ((line = br.readLine()) != null) {
-                if(iterator==0){
-                    iterator++;
-                    continue;
-                }
-                values = line.split(",");
-                stores.add(values[1]);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return stores;
-    }
-
-    public static Set<String> AllClients(String path){
-        Set<String> clients=new HashSet<>();
-        String line = "";
-        String [] values = null;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
-            int iterator=0;
-            while ((line = br.readLine()) != null) {
-                if(iterator==0){
-                    iterator++;
-                    continue;
-                }
-                values = line.split(",");
-                clients.add(values[2]);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return clients;
-    }
-
-    public static Store Stores(String [] values){
-        int  id = Integer.parseInt(values[0]);
-        String storeName = values[1];
-        String clientName= values[2];
-        Double storePercent = Double.parseDouble(values[3]);
-        Double  paymentPercent = Double.parseDouble(values[4]);
-        Double amount = Double.parseDouble(values[5]);
-        int count = Integer.parseInt(values[6]);
-        return new Store(id,storeName
-                ,clientName,storePercent
-                ,paymentPercent,amount,count);
-    }
-
-
-    public static List<Store> readAllFromFile(String path) {
-        List<Store> storesList = new ArrayList<>();
-        String line = "";
-        String [] values = null;
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
-            int iterator=0;
-            while ((line = br.readLine()) != null) {
-                if(iterator==0){
-                    iterator++;
-                    continue;
-                }
-                values = line.split(",");
-                Store data = Stores(values);
-                storesList.add(data);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return storesList;
-    }
-
 }
