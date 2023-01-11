@@ -9,9 +9,13 @@
         <module name="TaskFile" />
         <module name="Threads" />
         <module name="HW_12_29_2022" />
+        <module name="DesignPattern" />
+        <module name="DataToExcel" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="DataToExcel" target="17" />
+      <module name="DesignPattern" target="17" />
       <module name="HW_12_29_2022" target="17" />
       <module name="TaskFile" target="17" />
       <module name="Threads" target="17" />

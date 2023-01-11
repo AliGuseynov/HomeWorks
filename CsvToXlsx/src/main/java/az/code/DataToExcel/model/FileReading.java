@@ -8,14 +8,15 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class FileReading {
 
-    private static Store addPriceToList(Store store, String[] sArr) {
+    private static Store addSaleToList(Store store, String[] sArr) {
 
         HashMap<String, Double> companiesSold = store.getCompaniesSold();
 
-        store.setPrice(store.getPrice() + Double.parseDouble(sArr[5]));
+        store.setSale(store.getSale() + Double.parseDouble(sArr[5]));
 
         if (companiesSold.containsKey(sArr[2])) {
             store.getCompaniesSold().put(sArr[2], store.getCompaniesSold().get(sArr[2]) + Integer.parseInt(sArr[5]));
@@ -26,47 +27,48 @@ public class FileReading {
         return store;
     }
 
-    public static void readFile(String fileName) throws IOException {
 
-        File file = new File(fileName);
+    public static void readFile(String fileLocation) {
+        File file = new File(fileLocation);
+        List<String> companyIds = new ArrayList<>();
         List<String> clients = new ArrayList<>();
-        List<String> ids = new ArrayList<>();
-        HashMap<String, Store> sales = new HashMap<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(file))) {
-            String line = "";
+        HashMap<String, Store> stores = new HashMap<>();
 
-            while ((line = br.readLine()) != null) {
-                String[] tempArr = line.split("\t");
-                int counter = 0;
+        int counter = 0;
+        try (Scanner scanner = new Scanner(file);) {
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                String[] sArr = line.split("\t");
+
                 if (counter != 0) {
-
-                    HashMap<String, Double> saleData = new HashMap<>();
-                    if (!clients.contains(tempArr[2])) {
-                        clients.add(tempArr[2]);
+                    HashMap<String, Double> storeData = new HashMap<>();
+                    if (!clients.contains(sArr[2])) {
+                        clients.add(sArr[2]);
                     }
-                    if (sales.containsKey(tempArr[0])) {
+                    if (stores.containsKey(sArr[0])) {
 
-                        Store saleUnit = addPriceToList(sales.get(tempArr[0]), tempArr);
-                        sales.put(tempArr[0], saleUnit);
+                        Store saleUnit = addSaleToList(stores.get(sArr[0]), sArr);
+                        stores.put(sArr[0], saleUnit);
 
                     } else {
-                        ids.add(tempArr[0]);
-                        saleData.put(tempArr[2], Double.valueOf(tempArr[5]));
-                        sales.put(tempArr[0], new Store((int) Double.parseDouble(tempArr[0]), tempArr[1],
-                                Double.parseDouble(tempArr[5]), saleData));
+                        companyIds.add(sArr[0]);
+                        storeData.put(sArr[2], Double.valueOf(sArr[5]));
+                        stores.put(sArr[0], new Store(Long.parseLong(sArr[0]), sArr[1],
+                                Double.parseDouble(sArr[5]), storeData));
                     }
 
 
                 }
                 counter++;
             }
+
+
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
 
-//        FileWriter.exportXLSX(companyIds, sales, clients);
-        CsvToExcel.WriteDataToExcel(ids, sales, clients);
+        CsvToExcel.createExcel(companyIds, stores, clients);
     }
+
+
 }

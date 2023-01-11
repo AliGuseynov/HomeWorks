@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CsvToXlsx/DataToExcel.iml" filepath="$PROJECT_DIR$/CsvToXlsx/DataToExcel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DesignPattern/DesignPattern.iml" filepath="$PROJECT_DIR$/DesignPattern/DesignPattern.iml" />
       <module fileurl="file://$PROJECT_DIR$/HW_12_29_2022/HW_12_29_2022.iml" filepath="$PROJECT_DIR$/HW_12_29_2022/HW_12_29_2022.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaCodeAcademy.iml" filepath="$PROJECT_DIR$/.idea/JavaCodeAcademy.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeAcademyBootCamp/TaskFile.iml" filepath="$PROJECT_DIR$/CodeAcademyBootCamp/TaskFile.iml" />

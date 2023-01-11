@@ -10,21 +10,21 @@ import java.util.HashMap;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Store {
-    private int id;
-    private String storeName;
+    private long id;
+    private String name;
+    private double sale;
+    private HashMap<String, Double> companiesSold = new HashMap<String, Double>();
 //    private String client;
     //    private double storePercent;
 //    private double payment;
-    private double price;
-    private HashMap<String, Double> companiesSold = new HashMap<String, Double>();
+
 
     @Override
     public String toString() {
         return "Store{" +
                 "id=" + id +
-                ", storeName='" + storeName + '\'' +
-//                ", client='" + client + '\'' +
-                ", price=" + price +
+                ", name='" + name + '\'' +
+                ", sale=" + sale +
                 ", companiesSold=" + companiesSold +
                 '}';
     }
