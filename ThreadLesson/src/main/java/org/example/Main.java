@@ -12,9 +12,32 @@ import java.util.function.IntConsumer;
 import java.util.stream.IntStream;
 
 public class Main {
-    public static void main(String[] args) throws IOException, InterruptedException, ExecutionException {
-        ZeroEvenOdd zeroEvenOdd=new ZeroEvenOdd(4);
-
+    public static void main(String[] args) {
+        ZeroEvenOdd zeroEvenOdd = new ZeroEvenOdd(10);
+        Thread t1 = new Thread(() -> {
+            try {
+                zeroEvenOdd.zero((x) -> System.out.println(x));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        Thread t2 = new Thread(() -> {
+            try {
+                zeroEvenOdd.even((x) -> System.out.println(x));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        Thread t3 = new Thread(() -> {
+            try {
+                zeroEvenOdd.odd((x) -> System.out.println(x));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        t1.start();
+        t2.start();
+        t3.start();
     }
 
 
