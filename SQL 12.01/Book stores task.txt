@@ -1,0 +1,12 @@
+select binst.id, bookname, authorname, publishername, branchname, storename
+
+from books_instance as binst
+
+left join books ON books.id = binst.bookid
+left join authors ON authors.id = books.authorid
+
+left join branch ON branch.id = binst.branchid
+left join store ON store.id = branch.storeid
+
+left join publisher on publisher.id = binst.publisherid
+;

@@ -1,0 +1,70 @@
+TASKS 5 and 6 was not yet done
+
+
+Task 1
+
+SELECT job_title, (max_salary - min_salary)
+FROM jobs
+where max_salary BETWEEN 12000 and 18000
+
+--------------------------------------------
+Task 2
+
+select * 
+from employees
+where salary between 7000 and 12000 and commission_pct IS NULL 
+and (department_id != '30' and department_id != '50' and department_id != '80') 
+
+--------------------------------------------
+Task 3
+
+select CONCAT(first_name, last_name, '-' , hire_date, '-', commission_pct , '-' 
+				  , email ,'-', phone_number)
+from employees
+where salary > '11000'
+ORDER BY first_name, last_name  DESC
+
+--------------------------------------------
+Task 4
+
+select first_name, last_name, salary
+from employees
+where first_name like '%m' and hire_date < '2010-06-05'
+
+--------------------------------------------
+Task 7
+
+select * from job_history
+ORDER BY employee_id DESC, start_date  ASC
+
+--------------------------------------------
+Task 8
+
+select job_id, salary from employees
+where (phone_number like '515%' or phone_number like '590%') and hire_date > '1993-12-31'
+ORDER BY hire_date, salary  ASC
+
+--------------------------------------------
+Task 9
+
+select * from employees
+where date_part('year', hire_date) = 2001
+
+--------------------------------------------
+Task 10
+
+select first_name, last_name from employees
+-- where date_part('year', hire_date) not IN (1996,1997)
+where date_part('year', hire_date) != 1996 and date_part('year', hire_date) != 1997
+
+--------------------------------------------
+Task 11
+
+select email, job_id, first_name from employees
+where date_part('year', hire_date) = 2007 or date_part('month', hire_date) = 1
+
+--------------------------------------------
+Task 12
+
+select * from employees 
+where hire_date > '2007-12-31'
