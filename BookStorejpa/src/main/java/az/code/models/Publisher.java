@@ -1,4 +1,4 @@
-package org.example;
+package az.code.models;
 
 
 import lombok.AllArgsConstructor;
@@ -27,6 +27,6 @@ public class Publisher {
     @Column(name = "publisher_name")
     private String name;
 
-    @OneToMany(mappedBy = "publisher",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<BookInstance > bookInstances;
+    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Book book;
 }

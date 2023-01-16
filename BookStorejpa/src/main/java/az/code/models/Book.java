@@ -1,7 +1,8 @@
-package org.example;
+package az.code.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -11,6 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 public class Book {
 
     @Id
@@ -26,13 +28,11 @@ public class Book {
     @Column(name = "book_name")
    private String bookName;
 
+    @ManyToMany(mappedBy = "books")
+    private List<Author> authors;
+
 
     @OneToMany(mappedBy = "book",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    private List<BookInstance> bookInstanceList;
-
-
-   @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-   private Author author;
-
+    private List<Publisher> publishers;
 
 }

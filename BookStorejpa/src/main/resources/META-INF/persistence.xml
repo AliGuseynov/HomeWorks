@@ -4,12 +4,12 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="org.example.store">
         <description>Hibernate EntityManager Demo</description>
-        <class>org.example.Store</class>
-        <class>org.example.Branch</class>
-        <class>org.example.Book</class>
-        <class>org.example.BookInstance</class>
-        <class>org.example.Author</class>
-        <class>org.example.Publisher</class>
+        <class>az.code.models.Store</class>
+        <class>az.code.models.Branch</class>
+        <class>az.code.models.Book</class>
+        <class>az.code.models.BookInstance</class>
+        <class>az.code.models.Author</class>
+        <class>az.code.models.Publisher</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

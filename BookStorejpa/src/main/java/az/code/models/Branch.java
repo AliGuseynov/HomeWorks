@@ -1,11 +1,10 @@
-package org.example;
+package az.code.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Builder
@@ -28,9 +27,7 @@ public class Branch{
     private String branchName;
 
     @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-//    @JoinColumn(name ="store_id",referencedColumnName ="id")
+    @JoinColumn(name = "store_id")
     private Store store;
 
-    @OneToMany(mappedBy = "branch",fetch = FetchType.EAGER)
-    private List<BookInstance> bookInstances;
 }

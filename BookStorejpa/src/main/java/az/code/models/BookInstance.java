@@ -1,12 +1,10 @@
-package org.example;
+package az.code.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.LinkedHashSet;
-import java.util.List;
 
 @Entity
 @Builder
@@ -25,13 +23,14 @@ public class BookInstance {
     Long id;
 
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)//?? burda many to one duzgun deyil mentiqen nece yaza bilerdim?
-    Publisher publisher;
+//    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)//??
+//    Publisher publisher;
 
     @Column(name="barcode")
     String barcode;
 
-    @ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "branch_id")
     Branch branch;
 
 

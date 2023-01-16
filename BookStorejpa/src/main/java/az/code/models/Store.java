@@ -1,4 +1,4 @@
-package org.example;
+package az.code.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +29,5 @@ public class Store {
     private String storeName;
 
     @OneToMany(mappedBy = "store",fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-//    @JoinColumn(name="store_id",referencedColumnName ="id")
     private List<Branch> branches;
 }
