@@ -21,8 +21,8 @@
         <class>bookstore.models.Store</class>
         <class>bookstore.models.Branch</class>
 <!--        <class>bookstore.models.Publishers</class>-->
-<!--        <class>bookstore.models.Authors</class>-->
-<!--        <class>bookstore.models.Books</class>-->
+        <class>bookstore.models.Author</class>
+        <class>bookstore.models.Book</class>
 <!--        <class>bookstore.models.Book_instance</class>-->
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
