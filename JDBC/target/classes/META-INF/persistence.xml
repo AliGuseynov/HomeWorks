@@ -18,8 +18,12 @@
     </persistence-unit>
     <persistence-unit name="az.code.Bookstore">
         <description>Hibernate EntityManager Demo</description>
-        <class>bookstore.models.Stores</class>
-        <class>bookstore.models.Branches</class>
+        <class>bookstore.models.Store</class>
+        <class>bookstore.models.Branch</class>
+<!--        <class>bookstore.models.Publishers</class>-->
+<!--        <class>bookstore.models.Authors</class>-->
+<!--        <class>bookstore.models.Books</class>-->
+<!--        <class>bookstore.models.Book_instance</class>-->
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
