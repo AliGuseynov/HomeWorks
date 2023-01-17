@@ -1,9 +1,6 @@
 package bookstore.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -18,7 +15,6 @@ import java.util.List;
         @NamedQuery(name = "all_books", query = "select a from Book a"),
         @NamedQuery(name = "findBookById", query = "select a from Book a where a.id = ?1")}
 )
-
 public class Book {
     @Id
     @GeneratedValue(
@@ -35,5 +31,6 @@ public class Book {
 
 
     @ManyToMany(mappedBy = "books")
+    @ToString.Exclude
     private List<Author> authors;
 }

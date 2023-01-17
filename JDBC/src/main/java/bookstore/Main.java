@@ -8,11 +8,9 @@ import bookstore.models.Store;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.transaction.Transactional;
+import javax.persistence.TypedQuery;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,11 +30,11 @@ public class Main {
 //        updateStores(stores, branches, em);
 
 
-//        createBooks(em);
+//         createBooks(em);
 
+//        updateBooks(em);
 
-        updateBooks(em);
-
+        searchBookByName(em);
 
 
         em.getTransaction().commit();
@@ -112,21 +110,37 @@ public class Main {
         List<Author> authors = em.createNamedQuery("all_authors").getResultList();
         List<Book> books = em.createNamedQuery("all_books").getResultList();
 
+        ArrayList<Book> books1 = new ArrayList<>();
+        books1.add(books.get(0));
+        books1.add(books.get(1));
 
-        books.get(0).setAuthors(Arrays.asList(authors.get(0)));
-        books.get(1).setAuthors(Arrays.asList(authors.get(1)));
-        books.get(2).setAuthors(Arrays.asList(authors.get(1)));
-        books.get(3).setAuthors(Arrays.asList(authors.get(1)));
+        ArrayList<Book> books2 = new ArrayList<>();
+        books1.add(books.get(1));
+        books1.add(books.get(2));
+        books1.add(books.get(3));
 
-        authors.get(0).setBooks(Arrays.asList(books.get(0)));
-        authors.get(1).setBooks(Arrays.asList(books.get(1),books.get(2),books.get(3)));
+
+        authors.get(0).setBooks(books1);
+        authors.get(1).setBooks(books2);
 
         for (Author author:authors){
+            System.out.println(author.getAuthor_name());
             em.merge(author);
         }
         for (Book book: books){
+            System.out.println(book.getBook_name());
             em.merge(book);
         }
+    }
+
+    private static void searchBookByName(EntityManager em){
+
+        TypedQuery<Book> bookTypedQuery
+                = em.createQuery(
+                "SELECT e FROM Book e  JOIN e.authors auth WHERE auth.author_name LIKE 'A.S.%'", Book.class);
+        List<Book> resultList = bookTypedQuery.getResultList();
+
+        resultList.forEach(System.out::println);
     }
 
 }

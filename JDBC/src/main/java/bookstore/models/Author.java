@@ -1,9 +1,6 @@
 package bookstore.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
@@ -14,6 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="authors")
+
 @NamedQueries({
         @NamedQuery(name = "all_authors", query = "select a from Author a"),
         @NamedQuery(name = "findAuthorById", query = "select a from Author a where a.id = ?1")}
