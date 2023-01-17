@@ -20,10 +20,10 @@
         <description>Hibernate EntityManager Demo</description>
         <class>bookstore.models.Store</class>
         <class>bookstore.models.Branch</class>
-<!--        <class>bookstore.models.Publishers</class>-->
+        <class>bookstore.models.Publisher</class>
         <class>bookstore.models.Author</class>
         <class>bookstore.models.Book</class>
-<!--        <class>bookstore.models.Book_instance</class>-->
+        <class>bookstore.models.BookInstance</class>
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>

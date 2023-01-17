@@ -32,7 +32,5 @@ public class Branch {
     private String branch_name;
 
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
-//    @Column(name = "store_id")
-//    @JoinColumn(name = "store_id", referencedColumnName = "store_id",insertable=false, updatable=false)
     private Store store;
 }

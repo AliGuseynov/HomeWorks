@@ -1,20 +1,39 @@
 package bookstore;
 
-import bookstore.models.Author;
-import bookstore.models.Book;
-import bookstore.models.Branch;
-import bookstore.models.Store;
+import bookstore.models.*;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("az.code.Bookstore");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+
+        List<BookInstance> books = em.createNamedQuery("all_bookInstances").getResultList();
+
+        books.forEach(System.out::println);
+
+        em.close();
+
+//        seedDB();
+
+//        searchBookByNameCriterias();
+    }
+
+    private static void seedDB(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("az.code.Bookstore");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -34,7 +53,10 @@ public class Main {
 
 //        updateBooks(em);
 
-        searchBookByName(em);
+//        createPublisher(em);
+
+//        createBookInstance(em);
+
 
 
         em.getTransaction().commit();
@@ -133,6 +155,37 @@ public class Main {
         }
     }
 
+    private static void createPublisher(EntityManager em){
+
+        Publisher pub = Publisher.builder().publisher_name("New Reality").build();
+        em.merge(pub);
+
+    }
+
+    private static void createBookInstance(EntityManager em){
+
+        List<Book> books = em.createNamedQuery("all_books").getResultList();
+        List<Publisher> publishers = em.createNamedQuery("all_publishers").getResultList();
+        List<Branch> branches = em.createNamedQuery("all_branches").getResultList();
+
+        Book tempbook = books.get(randomint(books.size() -1, 0));
+        Branch tempbranch = branches.get(randomint(branches.size() -1, 0));
+        Publisher temppublisher = publishers.get(randomint(publishers.size() -1, 0));
+
+
+
+        for (int i = 0; i < 100; i++){
+            BookInstance book = BookInstance.builder()
+                    .book(tempbook)
+                    .branch(tempbranch)
+                    .publisher(temppublisher)
+                    .build();
+
+            em.merge(book);
+        }
+
+    }
+
     private static void searchBookByName(EntityManager em){
 
         TypedQuery<Book> bookTypedQuery
@@ -141,6 +194,32 @@ public class Main {
         List<Book> resultList = bookTypedQuery.getResultList();
 
         resultList.forEach(System.out::println);
+    }
+
+    private static void searchBookByNameCriterias(){
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("az.code.Bookstore");
+//        EntityManager em = emf.createEntityManager();
+//        em.getTransaction().begin();
+//
+//        CriteriaBuilder builder = em.getCriteriaBuilder();
+//
+//        CriteriaQuery<Book> createQuery = builder.createQuery(Book.class);
+//        Root<Book> root = createQuery.from(Book.class);
+//        createQuery.select(root).where(builder.like(root.get("book_name"), "The%"));
+//
+//        List<Book> bookList = em.createQuery(createQuery).getResultList();
+//
+//        bookList.forEach(System.out::println);
+//
+//
+//
+//        em.close();
+
+    }
+
+    private static int randomint(int max, int min){
+        Random r = new Random();
+        return r.nextInt((max - min) + 1) + min;
     }
 
 }
