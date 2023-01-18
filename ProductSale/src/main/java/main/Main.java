@@ -18,7 +18,8 @@ import java.util.Scanner;
 
 public class Main extends AbstractDao {
     public static void main(String[] args) {
-        ProductRepoImpl productRepo=new ProductRepoImpl();
+//        ProductRepoImpl productRepo=new ProductRepoImpl();
+//        System.out.println(productRepo.findById(1l));
 //        ProductService productService=new ProductService();
 //        productRepo.saleProduct(1l,20);
 //        productService.allProducts();
@@ -26,8 +27,8 @@ public class Main extends AbstractDao {
 //        salesRepo.save(1l,20);
 //        productService.addProduct(3l,"Qatiq",2.76,Category.HomeProduct,10);
 //productService.allProducts();
-//        SalesRepoImpl salesRepo=new SalesRepoImpl();
-//        salesRepo.save(1l,12);
+        SalesRepoImpl salesRepo=new SalesRepoImpl();
+        salesRepo.save(2l,12);
 //        EntityManager em = em();
 //        em.getTransaction().begin();
 

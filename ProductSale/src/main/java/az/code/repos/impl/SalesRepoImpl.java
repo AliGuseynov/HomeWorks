@@ -25,26 +25,26 @@ public class SalesRepoImpl extends AbstractDao implements SalesRepo {
         em.getTransaction().begin();
         Product product = productRepo.findById(id);
         if (product.getProductCount() > count) {
-            for (SalesItems salesitem : salesItems
-            ) {
+            SalesItems salesItems1=new SalesItems(id,product,count);
+            salesItems.add(salesItems1);
+            em.merge(salesItems1);
+            totalPay+=salesItems1.getSalescount()*product.getProductPrice();
+            for (SalesItems salesitem : salesItems) {
                 productRepo.saleProduct(id, count);
                 Product productSale = productRepo.findById(id);
                 if (salesitem.getProduct().getProductId() == id && productSale.getProductCount() > count) {
                     salesitem.setSalescount(salesitem.getSalescount() + count);
                     totalPay+=salesitem.getSalescount()*productSale.getProductPrice();
-                    em.persist(salesitem);
+                    em.merge(salesitem);
                 } else{
-                    SalesItems salesItems1=new SalesItems(id,productSale,count);
-                    salesItems.add(salesItems1);
-                    em.persist(salesItems1);
+                    SalesItems salesItems2=new SalesItems(id,productSale,count);
+                    salesItems.add(salesItems2);
+                    em.merge(salesItems2);
                     totalPay+=salesItems1.getSalescount()*productSale.getProductPrice();
                 }
-
-
             }
             Sales sales=new Sales(1l,totalPay,salesItems,LocalDate.now());
                 em.merge(sales);
-
         }else{
             System.out.println("o qeder mehsul yoxdur");
         }
