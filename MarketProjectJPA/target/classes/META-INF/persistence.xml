@@ -4,18 +4,18 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="az.code.models">
         <description>Hibernate EntityManager Demo</description>
-        <class>az.code.models.Store</class>
-        <class>az.code.models.Branch</class>
-        <class>az.code.models.Book</class>
-        <class>az.code.models.BookInstance</class>
-        <class>az.code.models.Author</class>
-        <class>az.code.models.Publisher</class>
+        <class>az.code.models.Item</class>
+        <class>az.code.models.Product</class>
+        <class>az.code.models.Sale</class>
+<!--        <class>az.code.models.BookInstance</class>-->
+<!--        <class>az.code.models.Author</class>-->
+<!--        <class>az.code.models.Publisher</class>-->
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
             <property name="hibernate.show_sql" value="true"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/code"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost/code2"/>
             <property name="javax.persistence.jdbc.user" value="postgres"/>
             <property name="javax.persistence.jdbc.password" value="nez1234"/>
         </properties>

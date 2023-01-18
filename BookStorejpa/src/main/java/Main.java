@@ -1,43 +1,43 @@
 import az.code.models.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
-import java.util.Arrays;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
-import java.util.Objects;
 
 public class Main {
     public static void main(String[] args) {
-        EntityManagerFactory emf= Persistence.createEntityManagerFactory("org.example.store");
+        EntityManagerFactory emf= Persistence.createEntityManagerFactory("az.code.models");
         EntityManager em=emf.createEntityManager();
-        em.getTransaction().begin();
-//        Store store=buildNewStore();
+//        em.getTransaction().begin();
 
+        CriteriaBuilder builder = emf.getCriteriaBuilder();
+        CriteriaQuery<Book> criteria = builder.createQuery(Book.class);
+        Root<Book> bookRoot = criteria.from(Book.class);
+        criteria.select(bookRoot);
+        criteria.where(builder.equal(bookRoot.get()));
 
+        List<Store> stores=em.createQuery("select s from Store ")
 
-
-
-
-
-//        Author author=Author.builder().name("Cek London").build();
-//        List<Author> authors = Arrays.asList(Author.builder().name("Mayn Rio").build(),
-//        Author.builder().name("Chingiz Abdullayev").build(),Author.builder().name("Misir Merdenov").build());
+//       Store store=buildNewStore();
+//       Author author=Author.builder().name("Cek London").build();
+//       List<Author> authors = Arrays.asList(Author.builder().name("Mayn Rio").build(),
+//       Author.builder().name("Chingiz Abdullayev").build(),Author.builder().name("Misir Merdenov").build());
 //
-//        for(Author auth : authors){
+//       for(Author auth : authors){
 //            em.merge(auth);
 //        }
-//
-//
-//        List<Book> books = Arrays.asList(
+
+
+//       List<Book> books = Arrays.asList(
 //                Book.builder().bookName("Book 1").build(),
 //                Book.builder().bookName("Book 2").build(),
 //                Book.builder().bookName("Book 3").build()
-//        );
-//        for(Book book : books){
+//       );
+//       for(Book book : books){
 //            em.merge(book);
-//        }
+//       }
 
 
 //
@@ -45,13 +45,13 @@ public class Main {
 //        List<Book> books = em.createQuery("SELECT a FROM Book a").getResultList();
 //
 //
-//            authors.get(2).setBooks(Arrays.asList(books.get(0), books.get(1), books.get(2)));
-//            authors.get(1).setBooks(Arrays.asList(books.get(0)));
-//            authors.get(0).setBooks(Arrays.asList(books.get(1), books.get(2)));
+//         authors.get(2).setBooks(Arrays.asList(books.get(0), books.get(1), books.get(2)));
+//         authors.get(1).setBooks(Arrays.asList(books.get(0)));
+//         authors.get(0).setBooks(Arrays.asList(books.get(1), books.get(2)));
 //
 //        System.out.println(authors.get(0).getBooks().size());
 
-//            books.get(0).setAuthors(Arrays.asList(authors.get(0), authors.get(2)));
+//          books.get(0).setAuthors(Arrays.asList(authors.get(0), authors.get(2)));
 //            books.get(1).setAuthors(Arrays.asList(authors.get(1), authors.get(2)));
 //            books.get(2).setAuthors(Arrays.asList(authors.get(1), authors.get(2)));
 
@@ -59,11 +59,11 @@ public class Main {
 //                List.of(Book.builder().bookName("The Gadfly").author(author).build(),
 //                        Book.builder().bookName("Olive Latham").author(author).build())
 //        ).build();
-        Book book = Book.builder().bookName("Shahmat").build();
-        List<Publisher> publishers=List.of(Publisher.builder().book(book).name("Qanun").build(),
-                Publisher.builder().book(book).name("Sherq neshriyyat").build());
-        book.setPublishers(publishers);
-//        Store store=Store.builder().storeName("BookStore").build();
+//        Book book = Book.builder().bookName("Shahmat").build();
+//        List<Publisher> publishers=List.of(Publisher.builder().book(book).name("Qanun").build(),
+//                Publisher.builder().book(book).name("Sherq neshriyyat").build());
+//        book.setPublishers(publishers);
+////        Store store=Store.builder().storeName("BookStore").build();
 //        Branch branch=Branch.builder().branchName("Sahil").store(store).build();
 //        Publisher publisher=Publisher.builder().name("Qanun").book(book).build();
 //        Branch branch = em.find(Branch.class, 9l);
@@ -71,8 +71,8 @@ public class Main {
 //        for(Author auth : authors){
 //            em.merge(auth);
 //        }
-        em.merge(book);
-        em.getTransaction().commit();
+//        em.merge(book);
+//        em.getTransaction().commit();
         em.close();
     }
 

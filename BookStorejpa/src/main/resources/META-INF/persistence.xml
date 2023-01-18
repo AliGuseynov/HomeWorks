@@ -2,7 +2,7 @@
 <persistence version="2.1"
              xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
-    <persistence-unit name="org.example.store">
+    <persistence-unit name="az.code.models">
         <description>Hibernate EntityManager Demo</description>
         <class>az.code.models.Store</class>
         <class>az.code.models.Branch</class>

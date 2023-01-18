@@ -44,4 +44,11 @@ public class Author {
     )
     private List<Book> books;
 
+    @Override
+    public String toString() {
+        return "Author{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
