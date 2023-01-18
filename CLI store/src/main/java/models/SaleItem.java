@@ -18,10 +18,10 @@ public class SaleItem {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "seq_product"
+            generator = "seq_Item"
     )
     @SequenceGenerator(
-            name = "seq_product",
+            name = "seq_Item",
             allocationSize = 1
     )
     private Long item_id;
@@ -29,4 +29,7 @@ public class SaleItem {
     @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
     private Product product;
     private Integer count;
+
+    @ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    private Sale sale;
 }

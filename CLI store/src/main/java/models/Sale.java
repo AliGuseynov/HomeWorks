@@ -19,15 +19,16 @@ public class Sale {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "seq_product"
+            generator = "seq_Sale"
     )
     @SequenceGenerator(
-            name = "seq_product",
+            name = "seq_Sale",
             allocationSize = 1
     )
     private Long sale_id;
     private Double check_sum;
 
-    @OneToMany(mappedBy = "product",fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.MERGE)
+    @JoinColumn(name = "sale_sale_id", referencedColumnName = "sale_id")
     private List<SaleItem> items;
 }

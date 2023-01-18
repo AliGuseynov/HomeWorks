@@ -29,12 +29,16 @@ public class Product {
 
     private Double product_price;
 
-    @Transient
-    private ItemCategory category;
-
     private String product_category;
 
     private Integer count;
 
     private String code;
+
+    public void printProduct(){
+        System.out.println("Product " + product_id +
+                "\nProduct name: " + product_name +
+                        "\nProduct code: " + code +
+                "\nProduct count: " + count);
+    }
 }
