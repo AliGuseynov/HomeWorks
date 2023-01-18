@@ -18,16 +18,17 @@ public class Sales {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "seq_book"
+            generator = "seq_sales"
     )
     @SequenceGenerator(
-            name = "seq_book",
+            name = "seq_sales",
             allocationSize = 1
     )
     private Long salesId;
     @Column(name = "salespay")
     private double salesPay;
     @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinColumn(name="sales")
     private List<SalesItems> salesItems;
     @Column(name = "localdate")
     private LocalDate localDate;

@@ -6,7 +6,8 @@ public enum Category {
     HomeProduct("Ev mehsul"),
     Drink("Icecek"),
     Sweets("Sakalad");
-    Category(String name){
+
+    private Category(String name) {
 
     }
 

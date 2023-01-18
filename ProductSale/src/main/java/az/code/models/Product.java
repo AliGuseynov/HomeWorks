@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,10 +18,10 @@ public class Product {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "seq_book"
+            generator = "seq_product"
     )
     @SequenceGenerator(
-            name = "seq_book",
+            name = "seq_product",
             allocationSize = 1
     )
     private Long productId;
@@ -32,5 +33,4 @@ public class Product {
     private Category category;
     @Column(name = "product_count")
     private double productCount;
-
 }

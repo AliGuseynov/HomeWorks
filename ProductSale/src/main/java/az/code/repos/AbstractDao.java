@@ -1,4 +1,4 @@
-package az.code.dao.impl;
+package az.code.repos;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -13,7 +13,7 @@ public abstract class AbstractDao {
         EntityManager entityManager=emf.createEntityManager();
         return entityManager;
     }
-    public void emfclose(){
+    public static void emfclose(){
         emf.close();
     }
 }
