@@ -1,3 +1,4 @@
+import az.code.Print;
 import az.code.business.SalesService;
 import az.code.entities.Product;
 
@@ -8,14 +9,9 @@ import javax.persistence.Persistence;
 public class Main {
     public static void main(String[] args) throws Exception {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("market");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Print print = new Print();
+        print.forMenu();
 
-        System.out.println("start");
-        entityManager.getTransaction().begin();
-
-        SalesService salesService = new SalesService();
-        System.out.println(salesService.addItem(1));
 
 
     }

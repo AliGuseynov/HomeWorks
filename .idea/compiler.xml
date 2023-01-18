@@ -11,9 +11,11 @@
         <module name="HW_12_29_2022" />
         <module name="DesignPattern" />
         <module name="DataToExcel" />
+        <module name="BookStoreORM" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BookStoreORM" target="17" />
       <module name="DataToExcel" target="17" />
       <module name="DesignPattern" target="17" />
       <module name="HW_12_29_2022" target="17" />

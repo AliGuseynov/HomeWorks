@@ -2,45 +2,47 @@ package az.code.business;
 
 import az.code.entities.Item;
 import az.code.entities.Product;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import az.code.entities.Sales;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SalesService {
 
-    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("market");
-    EntityManager entityManager = entityManagerFactory.createEntityManager();
+//    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("market");
+//    EntityManager entityManager = entityManagerFactory.createEntityManager();
 
+    List<Item> items = new ArrayList<>();
 
-    List<Product> productList1 = entityManager.createQuery(
-            "select p from Product p").getResultList();
+    public List<Item> addItem(Product product, int count) {
+        Item item = new Item();
 
-    //    private List<Product> productList;
-    private List<String> items=new ArrayList<>();
+        item = item.builder().count(count).product(product).build();
 
-
-    public List<String> addItem(int id) throws Exception {
-        for (int i = 0; i < productList1.size(); i++) {
-            if (isExist(id)) {
-                items.add(productList1.get(i).getProductName());
-
-            } else throw new Exception("Mehsul Tapilmadi");
+        boolean temp = true;
+        for (Item item1 : items) {
+            if (item1.getProduct().getProductCode() == item.getProduct().getProductCode()) {
+                item1.setCount(item1.getCount() + item.getCount());
+                temp = false;
+            }
         }
-
+        if (temp)
+            items.add(item);
+        System.out.println(items);
         return items;
+
     }
 
 
-    public boolean isExist(int id) {
-        for (Product product : productList1) {
-            if (product.getProductId() == id) {
-                return true;
-            }
+    public Sales newSales() {
+        double sumAmount = 0;
+        for (Item item : items) {
+            sumAmount += item.getCount() * item.getProduct().getProductPrice();
         }
-        return false;
+        Sales currentSale = new Sales();
+        currentSale = currentSale.builder().saleAmount(sumAmount).itemList(items).build();
+        System.out.println(currentSale);
+
+        return currentSale;
     }
 
 }

@@ -1,14 +1,17 @@
 package az.code.entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
 @NoArgsConstructor
+@Builder
 @AllArgsConstructor
 public class Product {
 
@@ -32,9 +35,12 @@ public class Product {
     @Column(name = "product_category")
     private ProductCategory productCategory;
 
-    @ManyToOne
-    @JoinColumn(name = "item_id")
-    private Item item;
+//    @ManyToOne
+//    @JoinColumn(name = "item_id")
+//    private Item item;
+
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private List<Item> itemList;
 
     @Override
     public String toString() {
@@ -45,7 +51,7 @@ public class Product {
                 ", productCount=" + productCount +
                 ", productCode='" + productCode + '\'' +
                 ", productCategory=" + productCategory +
-                ", item=" + item +
+                ", itemList=" + itemList +
                 '}';
     }
 }
