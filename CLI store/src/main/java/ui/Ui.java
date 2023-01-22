@@ -86,6 +86,7 @@ public class Ui {
                         productCode = scanner.nextLine();
 
                         if (productCode.equals("stop")){
+                            saleItem();
                             sale = false;
                         }
 
