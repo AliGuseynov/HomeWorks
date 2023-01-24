@@ -41,9 +41,11 @@ public class Main extends AbstractDao {
         List<SalesItems> salesItems = new ArrayList<>();
         double totalPay=0;
         Scanner scanner=new Scanner(System.in);
-        System.out.println("codunu ve sayini daxil edin");
+        System.out.println("codunu daxil edin");
         Long id=scanner.nextLong();
-        Double count=scanner.nextDouble();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("sayini daxil edin");
+        Double count=sc.nextDouble();
         while(true){
             Product product = productRepo.findById(id);
             if (product.getProductCount() > count) {
@@ -51,8 +53,8 @@ public class Main extends AbstractDao {
                 salesItems.add(salesItems1);
                 totalPay+=salesItems1.getSalescount()*product.getProductPrice();
                 System.out.println("davam ya bitirmek");
-                Scanner sc=new Scanner(System.in);
-                String teklif=sc.nextLine();
+                Scanner sc1= new Scanner(System.in);
+                String teklif=sc1.nextLine();
                 if(teklif.equals("bitirmek")){
                     em.merge(salesItems1);
                     Sales sales=new Sales(1l,totalPay,salesItems,LocalDate.now());
@@ -62,8 +64,9 @@ public class Main extends AbstractDao {
                     emfclose();
                 }else{
                     Scanner scanner1=new Scanner(System.in);
-                    System.out.println("codunu ve sayini daxil edin");
+                    System.out.println("codunu daxil edin");
                     Long id1=scanner1.nextLong();
+                    System.out.println("sayini daxil edin");
                     Double count1=scanner1.nextDouble();
                     for (SalesItems salesitem : salesItems) {
                         productRepo.saleProduct(id1, count1);
