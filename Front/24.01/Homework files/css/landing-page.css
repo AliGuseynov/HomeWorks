@@ -1,0 +1,9 @@
+/* Reset */
+* {
+	/* Alternative box model for everything */
+	box-sizing: border-box;
+
+	/* Reset padding and margin on all elements */
+	padding: 0;
+	margin: 0;
+}

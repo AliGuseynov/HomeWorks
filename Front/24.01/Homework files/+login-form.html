@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>HTML and CSS for Complete Beginners Homework: Login form</title>
+
+		<!-- This CSS and font is purely for presentational purposes. -->
+		<link rel="stylesheet" href="css/presentation.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+		<style>
+		.card-div{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+			font-family: "Poppins", sans-serif;
+			width: 70%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			margin-bottom: auto;    
+			box-sizing: border-box;
+			padding: 40px;
+		}
+		input{
+			border-style: none;
+		}
+		.input{
+			background-color: #F3F4F5;
+			border-color: #F3F4F5;
+			border-radius: 10px;
+			min-height: 65px;
+			width: 100%;
+			text-indent: 10px;
+			font-size: 20px;
+		}
+		.checkbox-div{
+			display: flex;
+			
+		}
+		.checkbox{
+			margin-right: 7px;
+		}
+		h6{
+			font-size: 15px;
+			color: #132A3B;
+			margin-bottom: 10px;
+		}
+		h4{
+			color: #132A3B;
+			font-size: 15px;
+			margin-left: 10px;
+		}
+		h1{
+			color: #132A3B;
+			font-size: 30px;
+			font-weight: 800;
+		}
+		button{
+			width: 100%;
+			min-height: 60px;
+			text-align: center;
+			background-color: #7C47C0;
+			color: #fff;
+			font-weight: 700;
+			font-size:larger;
+			border-radius: 10px;
+			transition: 0.5s;
+		}
+		button:hover{
+			background-color: #8f51e0 ;
+
+		}
+		.center-text{
+			text-align: center;
+		}
+		
+		</style>
+	</head>
+	<body>
+		<section class="learn">
+			<!-- Practice area start -->
+
+
+			<div class="card-div">
+				<h1>Sign in with your credebtials</h1>
+				<h6>EMAIL ADDRESS</h6>
+				<input class="input center-text" type="email" placeholder="chuck_norris@roundhouse.com">
+				<h6>PASSWORD</h6>
+				<input class="input" type="password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679">
+				<br>
+				<div class="checkbox-div">
+					<input class="checkbox" checked type="checkbox"> <h4>REMEMBER ME</h4>
+				</div>
+				<button>Sign In</button>
+			</div>
+			<!-- Practice area end -->
+		</section>
+
+		<section class="preview" data-content="Login form">
+			<img width="498px" src="images/reference/login-form.png" alt="Login form" />
+		</section>
+	</body>
+</html>

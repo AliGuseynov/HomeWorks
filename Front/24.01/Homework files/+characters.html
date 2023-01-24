@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>HTML and CSS for Complete Beginners Homework: Characters</title>
+
+		<!-- This CSS and font is purely for presentational purposes. -->
+		<link rel="stylesheet" href="css/presentation.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+
+		<style>
+		.card-div{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			border-radius: 5px;
+			font-family: "Poppins", sans-serif;
+			width: 90%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: auto;
+			margin-bottom: auto;    
+			box-sizing: border-box;
+			padding: 40px;
+			background-color: white;
+
+		}	
+		.card-item{
+			margin-bottom: 30px;
+			position: relative;
+  			text-align: center;
+		}	
+		.card-item img{
+			width: 100%;
+			border-radius: 18px;
+			transition: 0.5s;
+		}
+		.card-item img:hover{
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+		}
+		.text-inside{
+			position:absolute;
+			bottom: 20%;
+  			left: 50%;
+		}
+		.horizontal{
+
+			display: flex;
+		}
+		.vertical{
+			margin-right: 30px;
+		}
+	.small-text{
+		color: #777777;
+		font-size: 13px;
+		font-style: normal;
+		font-weight: 100;
+	}
+	.char-name{
+		font-size: 25px;
+		font-weight: 800;
+		display: flex;
+		margin-bottom: 0px;
+	}
+	.grid{
+		display: grid;
+  		grid-template-rows: 50% 50%;
+		align-items: start;
+	}
+	.font-bold{
+		font-weight: 700;
+		text-align: left;
+	}
+</style>
+	</head>
+	<body>
+		<section class="learn">
+			<!-- Practice area start -->
+
+			<div class="card-div">
+
+				<div class="card-item" id="ci-1">
+
+				<img src="images/characters/bg-elephant.jpg" alt="bunny">
+				<div class="text-inside"> 
+					<div class="vertical">
+						<h1 class="char-name">The Viking</h1>
+						<div class="horizontal">
+							<div class="vertical grid">
+								<p class="font-bold">68%<BR><em class="small-text">Win rate</em></p>
+							</div>
+							<div class="vertical grid">
+								<p class="font-bold">522<BR><em class="small-text">Games played</em></p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+
+				<div class="card-item" id="ci-2">
+					<img src="images/characters/bg-cat.jpg" alt="cat">
+					<div class="text-inside"> 
+						<div class="vertical">
+							<h1 class="char-name">The Sorceress</h1>
+							<div class="horizontal">
+								<div class="vertical grid">
+									<p class="font-bold">97%<BR><em class="small-text">Win rate</em></p>
+								</div>
+								<div class="vertical grid">
+									<p class="font-bold">1922<BR><em class="small-text">Games played</em></p>
+	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="card-item" id="ci-3">
+					<img src="images/characters/bg-bunny.jpg" alt="elephant">
+					<div class="text-inside"> 
+						<div class="vertical">
+							<h1 class="char-name">The Fashionista</h1>
+							<div class="horizontal">
+								<div class="vertical grid">
+									<p class="font-bold">24%<BR><em class="small-text">Win rate</em></p>
+								</div>
+								<div class="vertical grid">
+									<p class="font-bold">124<BR><em class="small-text">Games played</em></p>
+	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+			<!-- Practice area end -->
+		</section>
+
+		<section class="preview" data-content="Characters">
+			<img width="720px" src="images/reference/characters.png" alt="Characters" />
+		</section>
+	</body>
+</html>

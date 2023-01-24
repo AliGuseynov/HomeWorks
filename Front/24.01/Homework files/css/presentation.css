@@ -1,0 +1,83 @@
+:root {
+    --black: rgb(54, 65, 69);
+    --black-04: rgba(54, 65, 69, 0.04);
+    --black-30: rgba(54, 65, 69, 0.3);
+    --accent: #00A5EC;
+}
+
+body {
+    box-sizing: border-box;
+    padding: 2rem;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    min-height: 100vh;
+}
+
+body.flip {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.learn,
+.preview {
+    padding: 2rem;
+    position: relative;
+    border-radius: 4px;
+    margin-top: 3rem;
+}
+
+.learn::before,
+.preview::before {
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 4px;
+    position: absolute;
+    top: -3rem;
+    left: 0;
+}
+
+.learn {
+    border: 1px dashed var(--black-30);
+}
+
+.learn::before {
+    content: "Practice area";
+    background-color: var(--accent);
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    background-color: var(--black-04);
+}
+
+.preview::before {
+    content: 'Homework: 'attr(data-content);
+    background-color: var(--black);
+    max-width: calc(100% - 2rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.preview img {
+    max-width: 95%;
+}
+
+.preview p {
+    max-width: 75%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    color: var(--black);
+}
+
+.preview a {
+    color: var(--accent);
+}
