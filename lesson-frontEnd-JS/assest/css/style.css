@@ -1,0 +1,39 @@
+
+#categories{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+    background-color: rgba(212, 71, 71,0.7);
+
+}
+
+.category{
+    font-weight: bold;
+    font-size: large;
+    color: rgb(10, 9, 9);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+#products{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.product{
+    width: 23%;
+    height: 50%;
+    /* background-color: aqua; */
+    /* border: 2px solid red; */
+
+    /* height: 1000px; */
+
+}
+
+.p-img img{
+    width: 100%;
+}
+.p-description{
+    text-align: center;
+}
