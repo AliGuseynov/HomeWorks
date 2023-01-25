@@ -1,0 +1,59 @@
+h1{
+    margin-left: 40px;
+    font-family: Verdana, sans-serif;
+}
+.categories{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+.category{
+    font-size: large;
+    font-weight: 800;
+    font-family:Helvetica, sans-serif;
+
+    background-color: rgb(244, 244, 244);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    padding: 10px;
+    border-radius: 10px;
+    height: 80%;
+}
+body{
+    background-color: rgb(225, 225, 225);
+}
+.price{
+    color: orange;
+}
+.item{
+    background-color: rgb(244, 244, 244);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    padding: 10px;
+    border-radius: 10px;
+    width: 23%;
+    margin-bottom: 20px;
+}
+.imagediv img{
+    max-width: 80%;
+    align-items: center;
+    margin-bottom: 10px;
+    max-height: 250px;
+}
+.imagediv{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+}
+.Products{
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    justify-content: space-evenly;
+}
+.bottom{
+width: 100%;
+height: auto;
+
+}
