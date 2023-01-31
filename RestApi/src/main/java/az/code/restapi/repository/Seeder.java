@@ -28,9 +28,12 @@ public class Seeder {
 
         List<Employee> employeeList = new ArrayList<>();
          employeeList.add(Employee.builder().id(0l).name("Elnur").surname("Aliyev").taskList(tasks).build());
-        employeeList.add( Employee.builder().id(1l).name("Jamal").surname("Khalilov").taskList(tasks).build());
-        employeeList.add( Employee.builder().id(2l).name("Jamal").surname("Veliyev").taskList(tasks).build());
-        employeeList.add( Employee.builder().id(3l).name("Ruslan").surname("Mammadov").taskList(tasks).build());
+        employeeList.add( Employee.builder().id(2l).name("Jamal").surname("khalilov").taskList(tasks).build());
+        employeeList.add( Employee.builder().id(3l).name("Jamal").surname("Khalilov").taskList(tasks).build());
+        employeeList.add( Employee.builder().id(4l).name("Jamal").surname("Veliyev").taskList(tasks).build());
+        employeeList.add( Employee.builder().id(5l).name("Ruslan").surname("Mammadov").taskList(tasks).build());
+        employeeList.add( Employee.builder().id(6l).name("Jamal").surname("Zeynalov").taskList(tasks).build());
+        employeeList.add( Employee.builder().id(7l).name("Jamal").surname("Abbasov").taskList(tasks).build());
 
         return employeeList;
     }

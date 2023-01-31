@@ -1,6 +1,8 @@
 package az.code.restapi.controllers;
 
 import az.code.restapi.models.Employee;
+import az.code.restapi.models.Task;
+import az.code.restapi.repository.RepoInterface;
 import az.code.restapi.repository.RepoLocal;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +23,11 @@ public class MainController{
     @Autowired
     ApplicationContext applicationContext;
 
-    private RepoLocal repo;
+    private RepoInterface repo;
     @PostConstruct
     private void init(){
 
-        repo = applicationContext.getBean("RepoLocal", RepoLocal.class);
+        repo = applicationContext.getBean(RepoInterface.class);
     }
 
 
@@ -59,6 +61,23 @@ public class MainController{
 
 
         return repo.updateEmployee(id, employee);
+    }
+
+    @DeleteMapping("/{id}")
+    public Employee deleteEmployee(@PathVariable Long id){
+
+        return repo.deleteEmployee(id);
+    }
+
+    @GetMapping("/{id}/tasks")
+    public ResponseEntity<List<Task>> getEmployeeTasks(@PathVariable Long id){
+
+        return ResponseEntity.ok(repo.getTasks(id));
+    }
+
+    @PostMapping
+    public Task addTask(@RequestBody Task task){
+        return repo.addTask(task);
     }
 
 }
