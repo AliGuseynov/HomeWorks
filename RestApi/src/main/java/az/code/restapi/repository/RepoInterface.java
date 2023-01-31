@@ -19,5 +19,10 @@ public interface RepoInterface {
 
     public List<Task> getTasks(Long id);
 
-    public Task addTask(Task task);
+    public Task addTask(Long EmployeeID, Task task);
+    public Task updateTask(Long EmployeeID, Task task, Long taskId);
+    public Task deleteTask(Long EmployeeID, Long taskId);
+
+
+
 }

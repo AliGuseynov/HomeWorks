@@ -5,20 +5,19 @@ import az.code.restapi.models.Task;
 import jakarta.annotation.PostConstruct;
 import lombok.Getter;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 @Getter
 @Service("repo")
 @Profile("local")
 public class RepoLocal implements RepoInterface{
 
     int lastId;
+    int lastTaskId;
     private List<Employee> employees = new ArrayList<>();
 
     private List<Task> tasks = new ArrayList<>();
@@ -96,8 +95,55 @@ public class RepoLocal implements RepoInterface{
     }
 
     @Override
-    public Task addTask(Task task) {
+    public Task addTask(Long EmployeeID, Task task) {
+        Employee employee = findEmployeeById(EmployeeID);
+        task.setId(Long.parseLong(String.valueOf(employee.getTaskList().size())));
+        employee.getTaskList().add(task);
         return task;
+    }
+
+    @Override
+    public Task updateTask(Long EmployeeID, Task task, Long taskId) {
+
+        Employee employee = findEmployeeById(EmployeeID);
+
+        List<Task> tasks = employee.getTaskList();
+
+        for (Task task1: tasks){
+
+            if (task1.getId().equals(taskId)){
+                if (task.getTitle()!= null){
+                    task1.setTitle(task.getTitle());
+                } else if(task.getDescription()!= null){
+                    task1.setDescription(task.getDescription());
+                } else if(task.getDueDate()!= null){
+                    task1.setDueDate(task.getDueDate());
+                }
+                return task1;
+            }
+        }
+
+
+        return null;
+    }
+
+    @Override
+    public Task deleteTask(Long EmployeeID, Long taskId) {
+
+        Employee employee = findEmployeeById(EmployeeID);
+
+        List<Task> tasks = employee.getTaskList();
+
+        Task taskout = null;
+        for(Task task: tasks){
+            if (task.getId().equals(taskId)){
+                taskout = task;
+                tasks.remove(task);
+                break;
+            }
+        }
+
+        return taskout;
     }
 
     @PostConstruct
@@ -105,5 +151,6 @@ public class RepoLocal implements RepoInterface{
         employees = Seeder.getEmployees();
 
         lastId = employees.size();
+        lastTaskId = 4;
     }
 }
