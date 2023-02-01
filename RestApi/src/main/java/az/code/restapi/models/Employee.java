@@ -1,13 +1,12 @@
 package az.code.restapi.models;
 
 import jakarta.persistence.*;
-import jakarta.transaction.Transactional;
 import lombok.*;
 
 import java.util.List;
 
 @Getter
-//@Entity
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -18,5 +17,8 @@ public class Employee {
     private Long id;
     private String name;
     private String surname;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private List<Task> taskList;
 }

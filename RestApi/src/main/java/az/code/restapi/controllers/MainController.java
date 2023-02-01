@@ -2,7 +2,7 @@ package az.code.restapi.controllers;
 
 import az.code.restapi.models.Employee;
 import az.code.restapi.models.Task;
-import az.code.restapi.repository.RepoInterface;
+import az.code.restapi.services.ServiceInterface;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
@@ -18,11 +18,11 @@ public class MainController{
     @Autowired
     ApplicationContext applicationContext;
 
-    private RepoInterface repo;
+    private ServiceInterface repo;
     @PostConstruct
     private void init(){
 
-        repo = applicationContext.getBean(RepoInterface.class);
+        repo = applicationContext.getBean(ServiceInterface.class);
     }
 
 

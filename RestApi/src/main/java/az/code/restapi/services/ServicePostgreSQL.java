@@ -1,33 +1,48 @@
-package az.code.restapi.repository;
+package az.code.restapi.services;
 
 import az.code.restapi.models.Employee;
 import az.code.restapi.models.Task;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
+import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Getter
 @Component
 @Profile("PostgreSQL")
 @RequiredArgsConstructor
-public class RepoPostgreSQL implements RepoInterface{
+public class ServicePostgreSQL implements ServiceInterface {
     private final EntityManager em;
 
     @Override
     public Employee findEmployeeById(Long id) {
-        return null;
+        return em.find(Employee.class, id);
     }
 
     @Override
     public List<Employee> filterEmployees(String name, String surname, String sort, String sortType) {
-        return null;
+
+        if (sort == null ||
+                (!sort.equals("name") && !sort.equals("surname"))){
+            sort = "name";
+        }
+
+
+        Query query = em
+                .createQuery("SELECT e from Employee e where e.name like :name and e.surname like :surname ORDER BY surname")
+//                .createNativeQuery(" SELECT * FROM employee where name like ?1 and surname like ?2 ORDER BY ?3", Employee.class)
+                .setParameter("name", "%" + name + "%")
+                .setParameter("surname", "%" + surname + "%")
+//                .setParameter("order", "" + sort)
+                ;
+
+        List<Employee> employeeList = query.getResultList();
+        return employeeList;
     }
 
     @Override

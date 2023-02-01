@@ -1,4 +1,4 @@
-package az.code.restapi.repository;
+package az.code.restapi.services;
 
 import az.code.restapi.models.Employee;
 import az.code.restapi.models.Task;
@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 @Getter
 @Service("repo")
 @Profile("local")
-public class RepoLocal implements RepoInterface{
+public class ServiceLocal implements ServiceInterface {
 
     int lastId;
     int lastTaskId;
