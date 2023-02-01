@@ -11,7 +11,7 @@ public interface ServiceInterface {
 
     public List<Employee> filterEmployees(String name, String surname, String sort, String sortType);
 
-    public Employee addEmploee(Employee employee);
+    public Employee addEmployee(Employee employee);
 
     public Employee updateEmployee(Long id, Employee employeeTemp);
 

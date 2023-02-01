@@ -13,15 +13,16 @@ import java.time.LocalDate;
 @Data
 public class Task {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String description;
     private LocalDate dueDate;
 
-
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "employee_id", referencedColumnName = "id")
+    @ManyToOne()
     @JsonIgnore
+    @ToString.Exclude
+    @JoinColumn(name= "employee_id", referencedColumnName = "id")
     private Employee employee;
+
 }

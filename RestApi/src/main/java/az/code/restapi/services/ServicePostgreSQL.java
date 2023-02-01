@@ -4,14 +4,16 @@ import az.code.restapi.models.Employee;
 import az.code.restapi.models.Task;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
-import jakarta.persistence.TypedQuery;
 import jakarta.transaction.Transactional;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
 @Getter
 @Component
 @Profile("PostgreSQL")
@@ -31,14 +33,16 @@ public class ServicePostgreSQL implements ServiceInterface {
                 (!sort.equals("name") && !sort.equals("surname"))){
             sort = "name";
         }
+        if (sortType == null || !sortType.equals("desc") ){
+            sortType = "asc";
+        }
 
+        String queryStr = "SELECT e from Employee e where e.name like :name and e.surname like :surname ORDER BY " + sort + " " + sortType;
 
         Query query = em
-                .createQuery("SELECT e from Employee e where e.name like :name and e.surname like :surname ORDER BY surname")
-//                .createNativeQuery(" SELECT * FROM employee where name like ?1 and surname like ?2 ORDER BY ?3", Employee.class)
+                .createQuery(queryStr)
                 .setParameter("name", "%" + name + "%")
                 .setParameter("surname", "%" + surname + "%")
-//                .setParameter("order", "" + sort)
                 ;
 
         List<Employee> employeeList = query.getResultList();
@@ -47,9 +51,15 @@ public class ServicePostgreSQL implements ServiceInterface {
 
     @Override
     @Transactional
-    public Employee addEmploee(Employee employee) {
+    public Employee addEmployee(Employee employee) {
+
+
+        List<Task> taskList= employee.getTaskList();
+        employee.setTaskList(new ArrayList<>());
 
         Employee res = em.merge(employee);
+        res.setTaskList(taskList);
+        em.merge(res);
         return res;
     }
 
@@ -59,27 +69,80 @@ public class ServicePostgreSQL implements ServiceInterface {
     }
 
     @Override
+    @Transactional
     public Employee deleteEmployee(Long id) {
-        return null;
+        Employee tempEmployee = em.find(Employee.class, id);
+
+        int deletedTasksCount = em.createNativeQuery("DELETE from Task e where employee_id = :id")
+                .setParameter("id", id).executeUpdate();
+
+        int deletedCount = em.createQuery("DELETE from Employee e where e.id = :id")
+                .setParameter("id", id).executeUpdate();
+
+        System.out.println(deletedTasksCount + " tasks deleted");
+        System.out.println(deletedCount + " elements deleted");
+
+        return tempEmployee;
     }
 
     @Override
     public List<Task> getTasks(Long id) {
-        return null;
+
+        String queryStr = "SELECT * from task where employee_id = ?1";
+
+        Query query = em
+                .createNativeQuery(queryStr, Task.class)
+                .setParameter(1, id)
+                ;
+
+        List<Task> taskList = query.getResultList();
+
+    return taskList;
+
     }
 
     @Override
+    @Transactional
     public Task addTask(Long EmployeeID, Task task) {
-        return null;
+        Employee employee = findEmployeeById(EmployeeID);
+        employee.getTaskList().add(task);
+        em.merge(employee);
+        return employee.getTaskList().get(employee.getTaskList().size()-1);
     }
 
     @Override
+    @Transactional
     public Task updateTask(Long EmployeeID, Task task, Long taskId) {
-        return null;
+
+
+
+        Employee employee = findEmployeeById(EmployeeID);
+        employee.getTaskList().forEach(a->{
+            if(a.getId() == taskId){
+                Long idt = a.getId();
+                a = task;
+                a.setId(idt);
+            }
+        });
+
+        em.merge(employee);
+
+        return task;
+
     }
 
     @Override
+    @Transactional
     public Task deleteTask(Long EmployeeID, Long taskId) {
-        return null;
+        Task task = em.createQuery("SELECT t from Task t where t.id = :id", Task.class)
+                .setParameter("id", taskId)
+                .getSingleResult();
+
+
+        int deletedTasksCount = em.createNativeQuery("DELETE from Task e where e.id = :id")
+                .setParameter("id", taskId).executeUpdate();
+
+        System.out.println(deletedTasksCount + " tasks deleted");
+        return task;
     }
 }

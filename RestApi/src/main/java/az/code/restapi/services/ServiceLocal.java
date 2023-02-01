@@ -58,7 +58,7 @@ public class ServiceLocal implements ServiceInterface {
                 return employeeList;
     }
 
-    public Employee addEmploee(Employee employee){
+    public Employee addEmployee(Employee employee){
         employee =  employee.toBuilder().id(Long.parseLong(String.valueOf(lastId++))).build();
         System.out.println(employee);
         employees.add(employee);
