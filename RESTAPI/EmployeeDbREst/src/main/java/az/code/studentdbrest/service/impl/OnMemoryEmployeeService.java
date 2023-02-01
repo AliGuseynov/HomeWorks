@@ -1,6 +1,7 @@
 package az.code.studentdbrest.service.impl;
 
 import az.code.studentdbrest.models.Employee;
+import az.code.studentdbrest.models.Task;
 import az.code.studentdbrest.service.inter.EmployeeServiceInter;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
 @Service
 @Profile("Memory")
 public class OnMemoryEmployeeService implements EmployeeServiceInter {
+    private List<Task>taskList=new ArrayList<>();
     private List<Employee> employeeList = new ArrayList<>();
     private AtomicLong atomicLong = new AtomicLong(0);
     @Override
@@ -54,5 +56,28 @@ public class OnMemoryEmployeeService implements EmployeeServiceInter {
                 .sorted(Comparator.comparing(Employee::getSurname))
                 .collect(Collectors.toList());
         return employees;
+    }
+
+    @Override
+    public List<Task> getAllTask() {
+        return taskList;
+    }
+
+    @Override
+    public Task getByIdTask(Long id) {
+        return taskList.stream().filter(item->item.getId()==id).findAny().get();
+
+    }
+
+    @Override
+    public Task removeTask(Long id) {
+        employeeList.remove(getById(id));
+        return getByIdTask(id);
+    }
+
+    @Override
+    public Task saveTask(Task task) {
+        taskList.add(task);
+        return task;
     }
 }
