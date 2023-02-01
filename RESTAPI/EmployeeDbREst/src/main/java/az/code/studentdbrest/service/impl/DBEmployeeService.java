@@ -4,12 +4,14 @@ import az.code.studentdbrest.models.Employee;
 import az.code.studentdbrest.repo.EmployeeDataRepo;
 import az.code.studentdbrest.service.inter.EmployeeServiceInter;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
+@Profile("!Memory")
 public class DBEmployeeService implements EmployeeServiceInter {
     private final EmployeeDataRepo employeeDataRepo;
 

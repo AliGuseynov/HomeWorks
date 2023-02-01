@@ -21,6 +21,7 @@ public class EmployeeController {
 
     @PostMapping
     public ResponseEntity<EmployeeDto> saveEmployee(@RequestBody EmployeeDto employeeDto) {
+        System.out.println(employeeDto);
         return ResponseEntity.ok(objectMapper
                 .convertValue(employeeServiceInter.save(objectMapper.convertValue(employeeDto, Employee.class))
                         , EmployeeDto.class));
@@ -32,8 +33,8 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeServiceInter.getAllEmployee());
     }
 
-    @DeleteMapping("/delete")
-    public void deleteById(@RequestBody Long id) {
+    @DeleteMapping("/remove/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
         employeeServiceInter.remove(id);
     }
 
