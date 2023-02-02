@@ -49,14 +49,17 @@ public class EmployeeController {
                         .save(objectMapper.convertValue(employeeDTO, EmployeeEntity.class)), EmployeeDTO.class));
     }
 
-//    @GetMapping
-//    public ResponseEntity<List<EmployeeDTO>> search(@RequestParam(required = false) String name,
-//                                                    @RequestParam(required = false)Integer page,
-//                                                    @RequestParam(required = false) Integer size) {
-//
-//        return ResponseEntity.ok(employeeService.search(name, page, size).stream()
-//                .map(item -> objectMapper.convertValue(item, EmployeeDTO.class)).collect(Collectors.toList()));
-//    }
+    @GetMapping
+    public ResponseEntity<List<EmployeeDTO>> searchEmployees(@RequestParam(required = false) String name,
+                                                             String surname, String sort, String sortType
+    ){
+
+        return ResponseEntity.ok(e.filterEmployees(name,surname,sort,sortType)
+                .stream()
+                .map(item -> objectMapper.convertValue(item, EmployeeDto.class))
+                .collect(Collectors.toList()));
+
+    }
 
     @GetMapping
     public ResponseEntity<List<EmployeeDTO>> getAllEmployee() {
