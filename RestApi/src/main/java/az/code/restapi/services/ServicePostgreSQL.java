@@ -113,19 +113,11 @@ public class ServicePostgreSQL implements ServiceInterface {
     @Override
     @Transactional
     public Task updateTask(Long EmployeeID, Task task, Long taskId) {
-
-
-
+        
         Employee employee = findEmployeeById(EmployeeID);
-        employee.getTaskList().forEach(a->{
-            if(a.getId() == taskId){
-                Long idt = a.getId();
-                a = task;
-                a.setId(idt);
-            }
-        });
 
-        em.merge(employee);
+        task.setEmployee(employee);
+        em.merge(task);
 
         return task;
 
