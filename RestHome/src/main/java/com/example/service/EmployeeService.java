@@ -20,20 +20,21 @@ public class EmployeeService {
 
 
     @Transactional
-    public Employee saveEmployee(Employee employee){
+    public Employee saveEmployee(Employee employee) {
         employeeRepository.save(employee);
         return employee;
     }
 
-    public Optional<Employee> getEmployeeById(int id){
+    public Optional<Employee> getEmployeeById(int id) {
         return employeeRepository.findById(id);
     }
+
     @Transactional
-    public void deleteEmployee(int id){
-         employeeRepository.deleteById(id);
+    public void deleteEmployee(int id) {
+        employeeRepository.deleteById(id);
     }
 
-    public Employee updateEmployee(Employee employee){
+    public Employee updateEmployee(Employee employee) {
         return employeeCrudRepository.save(employee);
     }
 }

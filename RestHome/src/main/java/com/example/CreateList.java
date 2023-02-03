@@ -6,14 +6,14 @@ import com.example.entity.Task;
 import java.util.List;
 
 public class CreateList {
-    public static List<EmployeeDto> createList(){
+    public static List<EmployeeDto> createList() {
         return List.of(EmployeeDto.builder()
-                .id(1)
-                .name("Name1")
-                .surName("Surname1")
-                .taskList(List.of(Task.builder().id(1).title("Title1.1").description("Description1.1").dueDate("01-01-1").build(),
-                        Task.builder().id(2).title("Title1.2").description("Description1.2").dueDate("02-01-1").build()))
-                .build(),
+                        .id(1)
+                        .name("Name1")
+                        .surName("Surname1")
+                        .taskList(List.of(Task.builder().id(1).title("Title1.1").description("Description1.1").dueDate("01-01-1").build(),
+                                Task.builder().id(2).title("Title1.2").description("Description1.2").dueDate("02-01-1").build()))
+                        .build(),
                 EmployeeDto.builder()
                         .id(2)
                         .name("Name2")
@@ -42,6 +42,8 @@ public class CreateList {
                         .taskList(List.of(Task.builder().id(1).title("Title5.1").description("Description5.1").dueDate("01-05-1").build(),
                                 Task.builder().id(2).title("Title5.2").description("Description5.2").dueDate("02-05-1").build()))
                         .build()
-               );
-    };
+        );
+    }
+
+    ;
 }

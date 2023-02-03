@@ -1,0 +1,2 @@
+admin,$2a$10$0bXqBzZFwi14TGkDrLDIt.yCkgAWvhKSkU8e.bzgCI8NNm0IIA9Ie,true,ADMIN
+user,$2a$10$ovVvmZBwqPSHbD.ctiowSOfRpaWDjoA.ErLYBL7zMprpggRLOps4C,true,USER

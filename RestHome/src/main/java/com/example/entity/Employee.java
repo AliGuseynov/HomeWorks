@@ -21,6 +21,13 @@ public class Employee {
     @Column
     private String surName;
 
-    @OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Task> taskList;
+
+    public void setTaskList(List<Task> taskList) {
+        for (Task task : taskList) {
+            task.setEmployee(this);
+        }
+        this.taskList = taskList;
+    }
 }
