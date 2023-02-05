@@ -1,3 +1,7 @@
-AdminUser - admin123
 
-other users - 123456
+#############################
+We are using file in files/users.txt
+#############################
+
+Username : AdminUser, password: admin123,role : ADMIN
+Username : UserTest, password : 123456, role : USER

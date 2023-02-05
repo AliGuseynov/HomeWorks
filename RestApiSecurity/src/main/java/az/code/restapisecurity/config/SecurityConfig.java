@@ -1,10 +1,13 @@
 package az.code.restapisecurity.config;
 
+import az.code.restapisecurity.models.RoleEntity;
 import az.code.restapisecurity.repo.UserRepo;
+import az.code.restapisecurity.services.AuthServicesInterface;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,6 +15,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.config.annotation.web.AbstractRequestMatcherRegistry;
+
+
+import java.util.stream.Collectors;
 
 @Configuration
 @EnableGlobalMethodSecurity(
@@ -28,9 +36,27 @@ public class SecurityConfig {
 
     @Bean
     public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/api/v1/register", "/api/v1/setRole");
+        return (web) -> web.ignoring()
+                .requestMatchers("/api/v1/register");
+
     }
 
+
+//    @Bean
+//    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeHttpRequests((requests) -> requests
+//                        .requesMatchers("/vertretungsplan").hasAnyRole("SCHUELER", "LEHRER", "VERWALTUNG")
+//                        .anyRequest().authenticated()
+//                )
+//                .formLogin((form) -> form
+//                        .loginPage("/login")
+//                        .permitAll()
+//                )
+//                .logout((logout) -> logout.permitAll());
+//
+//        return http.build();
+//    }
 
 //    @Bean
 //    public InMemoryUserDetailsManager userDetailsService() {
@@ -52,16 +78,16 @@ public class SecurityConfig {
 //    }
 
     @Bean
-    public UserDetailsService userDetailsService(UserRepo userRepo, BCryptPasswordEncoder bCryptPasswordEncoder) {
+    public UserDetailsService userDetailsService(UserRepo userRepo, AuthServicesInterface authServicesInterface, BCryptPasswordEncoder bCryptPasswordEncoder) {
 
                 return username -> {
-                    return userRepo.findByUsername(username).map(user -> User.builder()
+                    return authServicesInterface.findByUsername(username, userRepo).map(user -> User.builder()
                             .username(user.getUsername())
                             .password(user.getPassword())
+                            .roles(user.getRoles().stream()
+                                    .map(RoleEntity::toString)
+                                    .toArray(String[]::new))
                             .roles("ADMIN")
-//                            .roles(user.getRoles().stream()
-//                                    .map(object -> object.getRoleName())
-//                                    .toList().toArray().toString())
                             .build()).orElseThrow(() -> new UsernameNotFoundException("Not found"));
                 };
             }

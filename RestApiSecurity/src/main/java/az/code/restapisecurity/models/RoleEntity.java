@@ -10,6 +10,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @AllArgsConstructor
 @Getter
+@ToString
 @Builder(toBuilder = true)
 public class RoleEntity {
     @Id

@@ -27,25 +27,32 @@ public class AuthController {
         authRepo = applicationContext.getBean(AuthServicesInterface.class);
     }
 
-    @PostMapping("/register")
+    @GetMapping("/getAdmin")
+    @Secured("ROLE_ADMIN")
+    public ResponseEntity<String> getAdmin(){
+        return ResponseEntity.ok("admin");
+    }
+
+
+
+
+
+
+
+    // post not working yet
+
+    @PostMapping("/setRole")
+    @Secured("ROLE_ADMIN")
+    public UserEntity setRole(@RequestParam Long UserID, Long RoleID){
+        return authRepo.updateUserRole(UserID, RoleID);
+    }
+
+    @PutMapping("/register")
+    @Secured("ROLE_ADMIN")
     public ResponseEntity<UserEntity> register(@RequestBody UserEntity user){
 
         System.out.println(user);
         return ResponseEntity.ok(authRepo.adduser(user));
     }
 
-    @GetMapping("/getAdmin")
-    @Secured("ROLE_ADMIN")
-//    @PreAuthorize("hasRole('ROLE_ADMIN')")
-    public ResponseEntity<String> getAdmin(){
-        return ResponseEntity.ok("admin");
-    }
-
-    @PostMapping("/setRole")
-    public UserEntity setRole(@RequestParam Long UserID, Long RoleID){
-
-
-        return authRepo.updateUserRole(UserID, RoleID);
-    }
-    
 }

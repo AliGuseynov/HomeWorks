@@ -3,6 +3,8 @@ package az.code.restapisecurity.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Locale;
 
@@ -18,24 +20,21 @@ public class UserEntity {
     private String username;
     private String password;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "employee_id", referencedColumnName = "id")
     private List<RoleEntity> roles;
 
 
 
-    public String getRoles1(){
-        String strOut = null;
+    public String[] getRoles1(){
 
-        for(RoleEntity role: roles){
-            strOut+= role.getRoleName() + ",";
-        }
+        String[]arr = new String [roles.size()];
 
-        strOut = strOut.substring(0, strOut.length()-1).toUpperCase();
+        //Converting List to Array
+        roles.toArray(arr);
 
-        System.out.println(strOut);
 
-        return strOut;
+        return arr;
 
     }
 
