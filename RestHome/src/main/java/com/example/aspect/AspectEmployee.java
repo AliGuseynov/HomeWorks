@@ -2,6 +2,7 @@ package com.example.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -11,14 +12,14 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class AspectEmployee {
 
-    @Before("execution(public void com.example.controller.EmployeeController.get*())")
+    @Around("execution(public void com.example.controller.EmployeeController.get*())")
     public void beforeGetMethod() {
         log.info("Get method for Employee starting....");
     }
 
     @After("execution(public void com.example.controller.EmployeeController.get*())")
     public void aftereGetMethod() {
-        log.info("Get method for Employee starting....");
+        log.info("Get method for Employee started");
     }
 
     @Before("execution(public void com.example.controller.EmployeeController.delete*())")

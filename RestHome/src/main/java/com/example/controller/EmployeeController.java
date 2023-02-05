@@ -26,12 +26,12 @@ public class EmployeeController {
     private final ObjectMapper objectMapper;
     private List<EmployeeDto> employeeDtoList = CreateList.createList();
 
-    @Secured("ROLE_USER")
+
     @GetMapping("/user")
     public String getUser(){
         return "Salam user";
     }
-    @Secured("ROLE_ADMIN")
+
     @GetMapping("/admin")
     public String getAdmin(){
         return "Salam admin";
@@ -43,6 +43,7 @@ public class EmployeeController {
         return objectMapper.convertValue(employeeService.getEmployeeById(id), EmployeeDto.class);
     }
 
+    @Secured("ROLE ADMIN")
     @PostMapping
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
         employeeService.saveEmployee(employee);
@@ -54,6 +55,7 @@ public class EmployeeController {
         return objectMapper.convertValue(employeeService.updateEmployee(employee), EmployeeDto.class);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}")
     public void deleteEmployee(@PathVariable int id) {
         employeeService.deleteEmployee(id);
@@ -70,11 +72,13 @@ public class EmployeeController {
         return ResponseEntity.ok(TaskDto.builder().id(taskId).build());
     }
 
+    @Secured("ROLE_ADMIN")
     @PostMapping("/{id}/tasks")
     public ResponseEntity<TaskDto> addTask(@PathVariable int id, @RequestBody Task task) {
         return ResponseEntity.ok(objectMapper.convertValue(taskService.saveTask(id, task), TaskDto.class));
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{id}/tasks/{taskId}")
     public void deleteTask(@PathVariable int id, @PathVariable int taskId) {
         taskService.deleteTask(taskId);
@@ -86,3 +90,6 @@ public class EmployeeController {
         return ResponseEntity.ok(result);
     }
 }
+
+
+//https://discord.com/api/oauth2/authorize?client_id=1071112862619148330&permissions=8&scope=bot
