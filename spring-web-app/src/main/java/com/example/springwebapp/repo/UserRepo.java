@@ -1,0 +1,12 @@
+package com.example.springwebapp.repo;
+
+import com.example.springwebapp.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface UserRepo extends JpaRepository<User, Long> {
+
+    Optional<User> findByUsernameAndActiveIsTrue(String username);
+}
