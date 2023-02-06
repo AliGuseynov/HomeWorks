@@ -54,14 +54,14 @@ public class EmployeeController {
                                                              String surname, String sort, String sortType
     ){
 
-        return ResponseEntity.ok(e.filterEmployees(name,surname,sort,sortType)
+        return ResponseEntity.ok(employeeService.filterEmployees(name,surname,sort,sortType)
                 .stream()
-                .map(item -> objectMapper.convertValue(item, EmployeeDto.class))
+                .map(item -> objectMapper.convertValue(item, EmployeeDTO.class))
                 .collect(Collectors.toList()));
 
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<EmployeeDTO>> getAllEmployee() {
         return ResponseEntity.ok(employeeService.getAllEmployee().stream().map(
                 e -> objectMapper.convertValue(e, EmployeeDTO.class)).collect(Collectors.toList()));

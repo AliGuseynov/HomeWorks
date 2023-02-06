@@ -12,6 +12,7 @@
         <module name="HW_12_29_2022" />
         <module name="DesignPattern" />
         <module name="BookStoreORM" />
+        <module name="demo-employee-crud" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

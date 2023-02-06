@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/JavaCodeAcademy.iml" filepath="$PROJECT_DIR$/.idea/JavaCodeAcademy.iml" />
       <module fileurl="file://$PROJECT_DIR$/CodeAcademyBootCamp/TaskFile.iml" filepath="$PROJECT_DIR$/CodeAcademyBootCamp/TaskFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/1_09_2023/Threads.iml" filepath="$PROJECT_DIR$/1_09_2023/Threads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Employee-RestAPI/demo-employee-crud.iml" filepath="$PROJECT_DIR$/Employee-RestAPI/demo-employee-crud.iml" />
     </modules>
   </component>
 </project>
